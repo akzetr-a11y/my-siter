@@ -4,19 +4,24 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ASTORUN</title>
+
+<!-- Подключаем шрифт правильно -->
+<link href="https://fonts.googleapis.com/css2?family=Stardos+Stencil:wght@400;700&display=swap" rel="stylesheet">
+
 <style>
-<link href=" https://fonts.googleapis.com/css2?family=Stardos+Stencil:wght@400;700&display=swap " rel="stylesheet">
 body {
 margin: 0;
 font-family: Arial, sans-serif;
 background-color: #111;
 color: #fff;
 }
+
 header {
 position: relative;
 height: 100vh;
 overflow: hidden;
 }
+
 .slide {
 position: absolute;
 width: 100%;
@@ -26,9 +31,19 @@ background-position: center;
 opacity: 0;
 animation: fade 15s infinite;
 }
-.slide:nth-child(1) {background-image: url('https://i.postimg.cc/Mpj4Kmvc/Tg5-X-j-F7-LBIcjxo-SZvaad-La-Ju-XA32-GAKGjm-H9p-Si-Pvg-VMFny-Yxb-IF-x5-Pr-PQ12-QQ-q-KQ7q-L8w-HGYz-Lw9v-An-Rc8.jpg'); animation-delay: 0s;}
-.slide:nth-child(2) {background-image: url('https://i.postimg.cc/TPXq6rzm/xm-JBCl-SFEcy-SXHx1-SSXPY9j7v-04cx-Rpzz-NPFYkbq-L4-HL7-W8i3-Jnlow-LUn-EZ95-GQz-Wjd-XQ.jpg'); animation-delay: 5s;}
-.slide:nth-child(3) {background-image: url('https://i.postimg.cc/B6ZJRVM6/YX3ev-7jk-Kmix-b7i-KC4s-Vzu28w-MTa-I7-Cya-Utr-Cd-No-Haf-EB-2-KJGS-x-Hwcyy-Gkqrx-Mc-1.jpg'); animation-delay: 10s;}
+
+.slide:nth-child(1) {
+background-image: url('https://i.postimg.cc/Mpj4Kmvc/Tg5-X-j-F7-LBIcjxo-SZvaad-La-Ju-XA32-GAKGjm-H9p-Si-Pvg-VMFny-Yxb-IF-x5-Pr-PQ12-QQ-q-KQ7q-L8w-HGYz-Lw9v-An-Rc8.jpg');
+animation-delay: 0s;
+}
+.slide:nth-child(2) {
+background-image: url('https://i.postimg.cc/TPXq6rzm/xm-JBCl-SFEcy-SXHx1-SSXPY9j7v-04cx-Rpzz-NPFYkbq-L4-HL7-W8i3-Jnlow-LUn-EZ95-GQz-Wjd-XQ.jpg');
+animation-delay: 5s;
+}
+.slide:nth-child(3) {
+background-image: url('https://i.postimg.cc/B6ZJRVM6/YX3ev-7jk-Kmix-b7i-KC4s-Vzu28w-MTa-I7-Cya-Utr-Cd-No-Haf-EB-2-KJGS-x-Hwcyy-Gkqrx-Mc-1.jpg');
+animation-delay: 10s;
+}
 
 @keyframes fade {
 0%, 33% { opacity: 1; }
@@ -45,19 +60,29 @@ background: rgba(0,0,0,0.5);
 padding: 20px;
 border-radius: 10px;
 }
+
 .hero-text h1 {
 font-family: 'Stardos Stencil', sans-serif;
 font-size: 3em;
 color: #c00;
 }
+
+.hero-text p {
+font-family: 'Stardos Stencil', sans-serif;
+font-size: 1.2em;
+color: #fff;
+}
+
 section {
 padding: 50px;
 max-width: 900px;
 margin: auto;
 }
+
 h2 {
 color: #c00;
 }
+
 .btn {
 display: inline-block;
 padding: 15px 25px;
@@ -68,24 +93,30 @@ font-weight: bold;
 border-radius: 5px;
 margin-top: 20px;
 }
-.btn:hover {background: #900;}
+.btn:hover {
+background: #900;
+}
+
 footer {
 text-align: center;
 padding: 20px;
 background: #000;
 color: #aaa;
 }
+
 form {
 display: flex;
 flex-direction: column;
 gap: 10px;
 margin-top: 20px;
 }
+
 input, textarea {
 padding: 10px;
 border: none;
 border-radius: 5px;
 }
+
 input[type="submit"] {
 background: #c00;
 color: #fff;
@@ -121,12 +152,11 @@ to collaborate and create something unique.
 <section id="music">
 <h2>My Music</h2>
 <p>You can listen to my works here:</p>
-<!-- Example SoundCloud -->
-<iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/track/3qkV71mewrT3wwnCrxog6R?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy">
-</iframe>
+
 <!-- Example Spotify -->
-<iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/track/3FViT3SzjWN6cgsz9BDtI3?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy">
-</iframe>
+<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/3qkV71mewrT3wwnCrxog6R?utm_source=generator&theme=0" width="100%" height="152" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+
+<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/3FViT3SzjWN6cgsz9BDtI3?utm_source=generator&theme=0" width="100%" height="152" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
 </section>
 
 <section id="join">
