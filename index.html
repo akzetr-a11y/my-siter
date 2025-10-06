@@ -1,21 +1,160 @@
 <!DOCTYPE html>
-
-<html>
-
+<html lang="en">
 <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ASTORUN</title>
+<style>
+body {
+margin: 0;
+font-family: Arial, sans-serif;
+background-color: #111;
+color: #fff;
+}
+header {
+position: relative;
+height: 100vh;
+overflow: hidden;
+}
+.slide {
+position: absolute;
+width: 100%;
+height: 100%;
+background-size: cover;
+background-position: center;
+opacity: 0;
+animation: fade 15s infinite;
+}
+.slide:nth-child(1) {background-image: url('https://picsum.photos/seed/1/1920/1080'); animation-delay: 0s;}
+.slide:nth-child(2) {background-image: url('https://picsum.photos/seed/2/1920/1080'); animation-delay: 5s;}
+.slide:nth-child(3) {background-image: url('https://picsum.photos/seed/3/1920/1080'); animation-delay: 10s;}
 
-  <meta charset="UTF-8">
+@keyframes fade {
+0%, 33% { opacity: 1; }
+34%, 100% { opacity: 0; }
+}
 
-  <title>astorun space</title>
-
+.hero-text {
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+text-align: center;
+background: rgba(0,0,0,0.5);
+padding: 20px;
+border-radius: 10px;
+}
+.hero-text h1 {
+color: #c00;
+font-size: 2.5em;
+}
+section {
+padding: 50px;
+max-width: 900px;
+margin: auto;
+}
+h2 {
+color: #c00;
+}
+.btn {
+display: inline-block;
+padding: 15px 25px;
+background: #c00;
+color: #fff;
+text-decoration: none;
+font-weight: bold;
+border-radius: 5px;
+margin-top: 20px;
+}
+.btn:hover {background: #900;}
+footer {
+text-align: center;
+padding: 20px;
+background: #000;
+color: #aaa;
+}
+form {
+display: flex;
+flex-direction: column;
+gap: 10px;
+margin-top: 20px;
+}
+input, textarea {
+padding: 10px;
+border: none;
+border-radius: 5px;
+}
+input[type="submit"] {
+background: #c00;
+color: #fff;
+cursor: pointer;
+}
+input[type="submit"]:hover {
+background: #900;
+}
+</style>
 </head>
-
 <body>
 
-  <h1>akzet music</h1>
+<header>
+<div class="slide"></div>
+<div class="slide"></div>
+<div class="slide"></div>
+<div class="hero-text">
+<h1>ASTORUN SPACE</h1>
+<p>A space for ideas, art and inspiration</p>
+<a href="#apply" class="btn">Apply Now</a>
+</div>
+</header>
 
-  <p>space of your talents</p>
+<section id="about">
+<h2>About Me</h2>
+<p>
+Hi, I’m AKZET, the founder of this cluster.
+My mission is to bring together artists, musicians, designers, and visionaries
+to collaborate and create something unique.
+</p>
+</section>
+
+<section id="music">
+<h2>My Music</h2>
+<p>You can listen to my works here:</p>
+<!-- Example SoundCloud -->
+<iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/track/3qkV71mewrT3wwnCrxog6R?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy">
+</iframe>
+<!-- Example Spotify -->
+<iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/track/3FViT3SzjWN6cgsz9BDtI3?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy">
+</iframe>
+</section>
+
+<section id="join">
+<h2>Join the ASTORUN</h2>
+<p>
+We are looking for creative people: artists, musicians, designers, dreamers.
+If you want to be part of something new and inspiring, let’s connect.
+</p>
+<a href="#apply" class="btn">Apply Now</a>
+</section>
+
+<section id="apply">
+<h2>Application Form</h2>
+<form>
+<input type="text" placeholder="Your Name" required>
+<input type="email" placeholder="Your Email" required>
+<textarea rows="4" placeholder="Tell us about yourself"></textarea>
+<input type="submit" value="Submit">
+</form>
+</section>
+
+<section id="contacts">
+<h2>Contacts</h2>
+<p>Email: AKZET.MUSIC@gmail.com</p>
+<p>Instagram: @ak3ettt</p>
+</section>
+
+<footer>
+© 2025 ASTORUN space. All rights reserved.
+</footer>
 
 </body>
-
 </html>
