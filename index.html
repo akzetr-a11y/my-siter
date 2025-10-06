@@ -5,8 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ASTORUN</title>
 
-<!-- Подключаем шрифт правильно -->
-<link href="https://fonts.googleapis.com/css2?family=Stardos+Stencil:wght@400;700&display=swap" rel="stylesheet">
+<!-- Подключаем шрифт Oswald -->
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&display=swap" rel="stylesheet">
 
 <style>
 body {
@@ -56,21 +56,23 @@ top: 50%;
 left: 50%;
 transform: translate(-50%, -50%);
 text-align: center;
-background: rgba(0,0,0,0.5);
-padding: 20px;
+background: #000; /* теперь полностью непрозрачный */
+padding: 25px 30px;
 border-radius: 10px;
 }
 
 .hero-text h1 {
-font-family: 'Stardos Stencil', sans-serif;
+font-family: 'Oswald', sans-serif;
 font-size: 3em;
 color: #c00;
+margin: 0 0 10px 0;
 }
 
 .hero-text p {
-font-family: 'Stardos Stencil', sans-serif;
-font-size: 1.2em;
+font-family: 'Oswald', sans-serif;
+font-size: 1.4em;
 color: #fff;
+margin: 0 0 15px 0;
 }
 
 section {
@@ -80,6 +82,7 @@ margin: auto;
 }
 
 h2 {
+font-family: 'Oswald', sans-serif;
 color: #c00;
 }
 
@@ -91,7 +94,8 @@ color: #fff;
 text-decoration: none;
 font-weight: bold;
 border-radius: 5px;
-margin-top: 20px;
+margin: 10px;
+transition: 0.3s;
 }
 .btn:hover {
 background: #900;
@@ -102,28 +106,6 @@ text-align: center;
 padding: 20px;
 background: #000;
 color: #aaa;
-}
-
-form {
-display: flex;
-flex-direction: column;
-gap: 10px;
-margin-top: 20px;
-}
-
-input, textarea {
-padding: 10px;
-border: none;
-border-radius: 5px;
-}
-
-input[type="submit"] {
-background: #c00;
-color: #fff;
-cursor: pointer;
-}
-input[type="submit"]:hover {
-background: #900;
 }
 </style>
 </head>
@@ -136,7 +118,7 @@ background: #900;
 <div class="hero-text">
 <h1>ASTORUN SPACE</h1>
 <p>A space for ideas, art and inspiration</p>
-<a href="#apply" class="btn">Apply Now</a>
+<a href="#contacts" class="btn">Contact Us</a>
 </div>
 </header>
 
@@ -153,7 +135,7 @@ to collaborate and create something unique.
 <h2>My Music</h2>
 <p>You can listen to my works here:</p>
 
-<!-- Example Spotify -->
+<!-- Spotify Embed -->
 <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/3qkV71mewrT3wwnCrxog6R?utm_source=generator&theme=0" width="100%" height="152" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
 
 <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/3FViT3SzjWN6cgsz9BDtI3?utm_source=generator&theme=0" width="100%" height="152" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
@@ -165,23 +147,16 @@ to collaborate and create something unique.
 We are looking for creative people: artists, musicians, designers, dreamers.
 If you want to be part of something new and inspiring, let’s connect.
 </p>
-<a href="#apply" class="btn">Apply Now</a>
-</section>
-
-<section id="apply">
-<h2>Application Form</h2>
-<form>
-<input type="text" placeholder="Your Name" required>
-<input type="email" placeholder="Your Email" required>
-<textarea rows="4" placeholder="Tell us about yourself"></textarea>
-<input type="submit" value="Submit">
-</form>
 </section>
 
 <section id="contacts">
 <h2>Contacts</h2>
 <p>Email: AKZET.MUSIC@gmail.com</p>
 <p>Instagram: @ak3ettt</p>
+
+<!-- Кнопки для связи -->
+<a class="btn" href="https://t.me/your_username" target="_blank">Telegram</a>
+<a class="btn" href="https://wa.me/1234567890" target="_blank">WhatsApp</a>
 </section>
 
 <footer>
