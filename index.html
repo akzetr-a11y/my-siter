@@ -32,6 +32,17 @@ opacity: 0;
 animation: fade 15s infinite;
 }
 
+/* затемняем каждую картинку через градиент */
+.slide::before {
+content: "";
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background: rgba(0,0,0,0.5); /* 50% затемнение */
+}
+
 .slide:nth-child(1) {
 background-image: url('https://i.postimg.cc/Mpj4Kmvc/Tg5-X-j-F7-LBIcjxo-SZvaad-La-Ju-XA32-GAKGjm-H9p-Si-Pvg-VMFny-Yxb-IF-x5-Pr-PQ12-QQ-q-KQ7q-L8w-HGYz-Lw9v-An-Rc8.jpg');
 animation-delay: 0s;
@@ -56,7 +67,7 @@ top: 50%;
 left: 50%;
 transform: translate(-50%, -50%);
 text-align: center;
-background: #000; /* теперь полностью непрозрачный */
+background: #000; /* непрозрачный черный фон */
 padding: 25px 30px;
 border-radius: 10px;
 }
