@@ -32,7 +32,6 @@ opacity: 0;
 animation: fade 15s infinite;
 }
 
-/* затемняем каждую картинку через градиент */
 .slide::before {
 content: "";
 position: absolute;
@@ -40,7 +39,7 @@ top: 0;
 left: 0;
 width: 100%;
 height: 100%;
-background: rgba(0,0,0,0.5); /* 50% затемнение */
+background: rgba(0,0,0,0.5);
 }
 
 .slide:nth-child(1) {
@@ -67,7 +66,7 @@ top: 50%;
 left: 50%;
 transform: translate(-50%, -50%);
 text-align: center;
-background: #000; /* непрозрачный черный фон */
+background: #000;
 padding: 25px 30px;
 border-radius: 10px;
 }
@@ -122,57 +121,111 @@ color: #aaa;
 </head>
 <body>
 
+<!-- Переключатель языка -->
+<div style="position:fixed; top:20px; right:20px; z-index:999;">
+<button onclick="setLanguage('en')" class="btn">EN</button>
+<button onclick="setLanguage('ua')" class="btn">UA</button>
+</div>
+
 <header>
 <div class="slide"></div>
 <div class="slide"></div>
 <div class="slide"></div>
 <div class="hero-text">
-<h1>ASTORUN SPACE</h1>
-<p>A space for ideas, art and inspiration</p>
-<a href="#contacts" class="btn">Contact Us</a>
+<h1 class="lang en">ASTORUN SPACE</h1>
+<h1 class="lang ua">ASTORUN ПРОСТІР</h1>
+<p class="lang en">A space for ideas, art and inspiration</p>
+<p class="lang ua">Простір для ідей, мистецтва та натхнення</p>
+<a href="#contacts" class="btn lang en">Contact Us</a>
+<a href="#contacts" class="btn lang ua">Зв’язатися</a>
 </div>
 </header>
 
 <section id="about">
-<h2>About Me</h2>
-<p>
-Hi, I’m AKZET, the founder of this cluster.
+<h2 class="lang en">About Me</h2>
+<h2 class="lang ua">Про мене</h2>
+<div style="display:flex; align-items:center; gap:40px; flex-wrap:wrap;">
+<div style="flex:1; min-width:250px;">
+<p class="lang en">
+Hi, I’m AKZET, the founder of this cluster.<br><br>
 My mission is to bring together artists, musicians, designers, and visionaries
 to collaborate and create something unique.
 </p>
+<p class="lang ua">
+Привіт, я AKZET, засновник цього кластера.<br><br>
+Моя місія — об'єднати митців, музикантів, дизайнерів і візіонерів,
+щоб співпрацювати та створювати щось унікальне.
+</p>
+</div>
+<div style="flex:1; display:flex; justify-content:center; min-width:250px;">
+<img src="https://i.postimg.cc/8cFJbd2Q/sample-photo.jpg"
+alt="AKZET Photo"
+style="width:280px; height:280px; object-fit:cover;
+clip-path: polygon(50% 100%, 0 0, 100% 0);
+border:5px solid #c00;">
+</div>
+</div>
 </section>
 
 <section id="music">
-<h2>My Music</h2>
-<p>You can listen to my works here:</p>
+<h2 class="lang en">My Music</h2>
+<h2 class="lang ua">Моя музика</h2>
+<p class="lang en">You can listen to my works here:</p>
+<p class="lang ua">Мої роботи можна послухати тут:</p>
 
-<!-- Spotify Embed -->
-<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/3qkV71mewrT3wwnCrxog6R?utm_source=generator&theme=0" width="100%" height="152" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/3qkV71mewrT3wwnCrxog6R?utm_source=generator&theme=0" width="100%" height="152" frameborder="0" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
 
-<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/3FViT3SzjWN6cgsz9BDtI3?utm_source=generator&theme=0" width="100%" height="152" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/3FViT3SzjWN6cgsz9BDtI3?utm_source=generator&theme=0" width="100%" height="152" frameborder="0" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
 </section>
 
 <section id="join">
-<h2>Join the ASTORUN</h2>
-<p>
+<h2 class="lang en">Join the ASTORUN</h2>
+<h2 class="lang ua">Долучайся до ASTORUN</h2>
+<p class="lang en">
 We are looking for creative people: artists, musicians, designers, dreamers.
 If you want to be part of something new and inspiring, let’s connect.
 </p>
+<p class="lang ua">
+Ми шукаємо творчих людей: митців, музикантів, дизайнерів, мрійників.
+Якщо хочеш стати частиною чогось нового й надихаючого — приєднуйся.
+</p>
+
+<!-- Видео YouTube -->
+<div style="position:relative; padding-bottom:56.25%; height:0; overflow:hidden; max-width:100%; border-radius:10px; margin-top:20px;">
+<iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+title="YouTube video"
+frameborder="0"
+allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+allowfullscreen
+style="position:absolute; top:0; left:0; width:100%; height:100%;">
+</iframe>
+</div>
 </section>
 
 <section id="contacts">
-<h2>Contacts</h2>
+<h2 class="lang en">Contacts</h2>
+<h2 class="lang ua">Контакти</h2>
 <p>Email: AKZET.MUSIC@gmail.com</p>
 <p>Instagram: @ak3ettt</p>
 
-<!-- Кнопки для связи -->
 <a class="btn" href="https://t.me/your_username" target="_blank">Telegram</a>
 <a class="btn" href="https://wa.me/1234567890" target="_blank">WhatsApp</a>
 </section>
 
 <footer>
-© 2025 ASTORUN space. All rights reserved.
+<p class="lang en">© 2025 ASTORUN space. All rights reserved.</p>
+<p class="lang ua">© 2025 ASTORUN простір. Всі права захищено.</p>
 </footer>
+
+<script>
+function setLanguage(lang) {
+document.querySelectorAll('.lang').forEach(el => {
+el.style.display = el.classList.contains(lang) ? 'block' : 'none';
+});
+}
+// язык по умолчанию — английский
+setLanguage('en');
+</script>
 
 </body>
 </html>
