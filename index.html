@@ -8,25 +8,26 @@
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&display=swap" rel="stylesheet">
 
 <style>
-body { margin:0; font-family:Arial,sans-serif; background:#111; color:#fff; }
+body { margin:0; font-family:Arial,sans-serif; background:#111; color:#fff; scroll-behavior:smooth; }
 header { position:relative; height:100vh; overflow:hidden; }
 .slide { position:absolute; width:100%; height:100%; background-size:cover; background-position:center; opacity:0; animation:fade 15s infinite; }
-.slide::before { content:""; position:absolute; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.6); } /* затемнення для читабельності */
+.slide::before { content:""; position:absolute; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.6); }
 .slide:nth-child(1){background-image:url('https://i.postimg.cc/Mpj4Kmvc/Tg5-X-j-F7-LBIcjxo-SZvaad-La-Ju-XA32-GAKGjm-H9p-Si-Pvg-VMFny-Yxb-IF-x5-Pr-PQ12-QQ-q-KQ7q-L8w-HGYz-Lw9v-An-Rc8.jpg'); animation-delay:0s;}
 .slide:nth-child(2){background-image:url('https://i.postimg.cc/TPXq6rzm/xm-JBCl-SFEcy-SXHx1-SSXPY9j7v-04cx-Rpzz-NPFYkbq-L4-HL7-W8i3-Jnlow-LUn-EZ95-GQz-Wjd-XQ.jpg'); animation-delay:5s;}
 .slide:nth-child(3){background-image:url('https://i.postimg.cc/B6ZJRVM6/YX3ev-7jk-Kmix-b7i-KC4s-Vzu28w-MTa-I7-Cya-Utr-Cd-No-Haf-EB-2-KJGS-x-Hwcyy-Gkqrx-Mc-1.jpg'); animation-delay:10s;}
 @keyframes fade {0%,33%{opacity:1;}34%,100%{opacity:0;}}
 .hero-text { position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); text-align:center; background:rgba(0,0,0,0.8); padding:25px 30px; border-radius:10px;}
-.hero-text h1 { font-family:'Oswald',sans-serif; font-size:3em; color:#c00; margin:0 0 10px 0; }
-.hero-text p { font-family:'Oswald',sans-serif; font-size:1.4em; color:#fff; margin:0 0 15px 0; }
-section { padding:50px 20px; max-width:900px; margin:auto; }
+.hero-text h1 { font-family:'Oswald',sans-serif; font-size:3em; color:#c00; margin:0 0 10px 0; transition:1s; }
+.hero-text p { font-family:'Oswald',sans-serif; font-size:1.4em; color:#fff; margin:0 0 15px 0; transition:1s; }
+section { padding:50px 20px; max-width:900px; margin:auto; opacity:0; transform:translateY(30px); transition:1s ease-out; }
 h2 { font-family:'Oswald',sans-serif; color:#c00; text-align:center; margin-bottom:30px; }
 .btn { display:inline-block; padding:12px 20px; background:#c00; color:#fff; text-decoration:none; font-weight:bold; border-radius:5px; margin:10px; transition:0.3s; }
 .btn:hover { background:#900; }
 footer { text-align:center; padding:20px; background:#000; color:#aaa; }
-.triangle { width:250px; height:250px; object-fit:cover; border:5px solid #c00; }
+.triangle { width:250px; height:250px; object-fit:cover; }
 .triangle.normal { clip-path: polygon(50% 0, 0 100%, 100% 100%); }
 .triangle.flipped { clip-path: polygon(50% 100%, 0 0, 100% 0); }
+.lang { display:none; }
 @media (max-width:768px){
 .hero-text h1 { font-size:2em; }
 .hero-text p { font-size:1em; }
@@ -45,7 +46,6 @@ iframe { height:120px; }
 </head>
 <body>
 
-<!-- Переключатель языка -->
 <div style="position:fixed; top:20px; right:20px; z-index:999;">
 <button onclick="setLanguage('en')" class="btn">EN</button>
 <button onclick="setLanguage('ua')" class="btn">UA</button>
@@ -65,8 +65,7 @@ iframe { height:120px; }
 </div>
 </header>
 
-<!-- About ASTORUN -->
-<section id="astorun">
+<section id="astorun" class="fade-in">
 <h2 class="lang en">About ASTORUN</h2>
 <h2 class="lang ua">Про ASTORUN</h2>
 <div style="display:flex; align-items:center; gap:20px; flex-wrap:wrap; justify-content:center;">
@@ -75,39 +74,31 @@ iframe { height:120px; }
 </div>
 <div style="flex:2; min-width:250px;">
 <p class="lang en">
-ASTORUN is a creative cluster — a community where artists, musicians,
-designers, and visionaries can collaborate.<br><br>
+ASTORUN is a creative cluster where artists, musicians, designers, and visionaries collaborate.<br><br>
 Founded in 2009 in Bila Tserkva, Ukraine, ASTORUN is officially recognized
 as a nationwide public organization. Our mission is to provide a platform
-for fresh ideas, cultural projects, and experiments in art and music.
+for fresh ideas, cultural projects, and artistic experiments.
 </p>
 <p class="lang ua">
-ASTORUN — це творчий кластер, спільнота, де митці, музиканти,
-дизайнери та візіонери можуть співпрацювати.<br><br>
-Заснована в 2009 році в Білій Церкві, Україна, ASTORUN офіційно
-визнана всеукраїнською громадською організацією. Наша мета — створити
-платформу для нових ідей, культурних проєктів та експериментів у
-мистецтві й музиці.
+ASTORUN — це творчий кластер, де митці, музиканти, дизайнери та візіонери співпрацюють.<br><br>
+Заснована в 2009 році в Білій Церкві, Україна, ASTORUN офіційно визнана
+всеукраїнською громадською організацією. Мета — створити платформу для нових ідей,
+культурних проєктів та експериментів у мистецтві.
 </p>
 </div>
 </div>
 </section>
 
-<!-- About Me -->
-<section id="about">
+<section id="about" class="fade-in">
 <h2 class="lang en">About Me</h2>
 <h2 class="lang ua">Про мене</h2>
 <div style="display:flex; align-items:center; gap:20px; flex-wrap:wrap; justify-content:center;">
 <div style="flex:2; min-width:220px;">
 <p class="lang en">
-Hi, I’m AKZET, a DJ and producer. I create new melodies, explore innovative sounds,
-and develop unique projects. I connect artists, musicians, and designers to
-collaborate and bring ideas to life.
+Hi, I’m AKZET, DJ and producer. I create new melodies, explore innovative sounds, and develop unique projects. I connect artists, musicians, and designers to collaborate and bring ideas to life.
 </p>
 <p class="lang ua">
-Привіт, я AKZET, ді-джей та продюсер. Створюю нові мелодії, досліджую інноваційні звуки
-та розвиваю унікальні проєкти. Об'єдную митців, музикантів і дизайнерів для
-співпраці та втілення ідей.
+Привіт, я AKZET, ді-джей та продюсер. Створюю нові мелодії, досліджую інноваційні звуки та розвиваю унікальні проєкти. Об'єдную митців, музикантів і дизайнерів для співпраці та втілення ідей.
 </p>
 </div>
 <div style="flex:1; min-width:180px; display:flex; justify-content:center;">
@@ -116,40 +107,27 @@ collaborate and bring ideas to life.
 </div>
 </section>
 
-<!-- My Music -->
-<section id="music">
+<section id="music" class="fade-in">
 <h2 class="lang en">My Music</h2>
 <h2 class="lang ua">Моя музика</h2>
-<p class="lang en">You can listen to my works here:</p>
-<p class="lang ua">Мої роботи можна послухати тут:</p>
-
+<p class="lang en">Listen to my works:</p>
+<p class="lang ua">Слухайте мої роботи:</p>
 <iframe style="border-radius:12px; width:100%;" src="https://open.spotify.com/embed/track/3qkV71mewrT3wwnCrxog6R?utm_source=generator&theme=0" height="152" frameborder="0" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-
 <iframe style="border-radius:12px; width:100%;" src="https://open.spotify.com/embed/track/3FViT3SzjWN6cgsz9BDtI3?utm_source=generator&theme=0" height="152" frameborder="0" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-
 <iframe style="border-radius:12px; width:100%;" src="https://open.spotify.com/embed/track/4Z3X2AxxO32a6uY6j3kP1y?utm_source=generator&theme=0" height="152" frameborder="0" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
 </section>
 
-<!-- Join the ASTORUN -->
-<section id="join">
+<section id="join" class="fade-in">
 <h2 class="lang en">Join the ASTORUN</h2>
 <h2 class="lang ua">Долучайся до ASTORUN</h2>
-<p class="lang en">
-We are looking for creative people: artists, musicians, designers, dreamers.
-Join us to be part of a renewed creative space, collaborate, and bring ideas to life.
-</p>
-<p class="lang ua">
-Ми шукаємо творчих людей: митців, музикантів, дизайнерів, мрійників.
-Долучайся до оновленого творчого простору, співпрацюй та втілюй ідеї в життя.
-</p>
-
+<p class="lang en">We are looking for creative people: artists, musicians, designers, dreamers. Join us to be part of a renewed creative space, collaborate, and bring ideas to life.</p>
+<p class="lang ua">Ми шукаємо творчих людей: митців, музикантів, дизайнерів, мрійників. Долучайся до оновленого творчого простору, співпрацюй та втілюй ідеї в життя.</p>
 <div style="position:relative; padding-bottom:56.25%; height:0; overflow:hidden; max-width:100%; border-radius:10px; margin-top:20px;">
 <iframe src="https://www.youtube.com/embed/elF3c6efIPE?si=UnJg1Yk5gUkdcUTf" title="YouTube video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="position:absolute; top:0; left:0; width:100%; height:100%;"></iframe>
 </div>
 </section>
 
-<!-- Contacts -->
-<section id="contacts">
+<section id="contacts" class="fade-in">
 <h2 class="lang en">Contacts</h2>
 <h2 class="lang ua">Контакти</h2>
 <p>Email: akzet.music@gmail.com</p>
@@ -158,11 +136,34 @@ Join us to be part of a renewed creative space, collaborate, and bring ideas to 
 <a class="btn" href="https://wa.me/+447493530070" target="_blank">WhatsApp</a>
 </section>
 
-<footer>
+<footer class="fade-in">
 <p class="lang en">© 2025 ASTORUN space. All rights reserved.</p>
 <p class="lang ua">© 2025 ASTORUN простір. Всі права захищено.</p>
 </footer>
 
 <script>
 function setLanguage(lang){
-localStorage.setItem('language
+localStorage.setItem('language', lang);
+document.querySelectorAll('.lang').forEach(el=>{
+el.style.display = el.classList.contains(lang)? 'block':'none';
+});
+}
+const savedLanguage = localStorage.getItem('language') || 'en';
+window.addEventListener('DOMContentLoaded', () => setLanguage(savedLanguage));
+
+// Анімація при скролі
+function fadeInOnScroll() {
+document.querySelectorAll('.fade-in').forEach(el=>{
+const rect = el.getBoundingClientRect();
+if(rect.top < window.innerHeight - 100){
+el.style.opacity = 1;
+el.style.transform = 'translateY(0)';
+}
+});
+}
+window.addEventListener('scroll', fadeInOnScroll);
+fadeInOnScroll();
+</script>
+
+</body>
+</html>
