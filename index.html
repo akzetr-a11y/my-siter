@@ -4,9 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ASTORUN</title>
-
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&display=swap" rel="stylesheet">
-
 <style>
 body { margin:0; font-family:Arial,sans-serif; background:#111; color:#fff; scroll-behavior:smooth; }
 header { position:relative; height:100vh; overflow:hidden; }
@@ -16,7 +14,7 @@ header { position:relative; height:100vh; overflow:hidden; }
 .slide:nth-child(2){background-image:url('https://i.postimg.cc/TPXq6rzm/xm-JBCl-SFEcy-SXHx1-SSXPY9j7v-04cx-Rpzz-NPFYkbq-L4-HL7-W8i3-Jnlow-LUn-EZ95-GQz-Wjd-XQ.jpg'); animation-delay:5s;}
 .slide:nth-child(3){background-image:url('https://i.postimg.cc/B6ZJRVM6/YX3ev-7jk-Kmix-b7i-KC4s-Vzu28w-MTa-I7-Cya-Utr-Cd-No-Haf-EB-2-KJGS-x-Hwcyy-Gkqrx-Mc-1.jpg'); animation-delay:10s;}
 @keyframes fade {0%,33%{opacity:1;}34%,100%{opacity:0;}}
-.hero-text { position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); text-align:center; background:rgba(0,0,0,0.8); padding:25px 30px; border-radius:10px;}
+.hero-text { position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); text-align:center; background:rgba(0,0,0,0.85); padding:25px 30px; border-radius:10px;}
 .hero-text h1 { font-family:'Oswald',sans-serif; font-size:3em; color:#c00; margin:0 0 10px 0; transition:1s; }
 .hero-text p { font-family:'Oswald',sans-serif; font-size:1.4em; color:#fff; margin:0 0 15px 0; transition:1s; }
 section { padding:50px 20px; max-width:900px; margin:auto; opacity:0; transform:translateY(30px); transition:1s ease-out; }
@@ -24,21 +22,16 @@ h2 { font-family:'Oswald',sans-serif; color:#c00; text-align:center; margin-bott
 .btn { display:inline-block; padding:12px 20px; background:#c00; color:#fff; text-decoration:none; font-weight:bold; border-radius:5px; margin:10px; transition:0.3s; }
 .btn:hover { background:#900; }
 footer { text-align:center; padding:20px; background:#000; color:#aaa; }
-.triangle { width:250px; height:250px; object-fit:cover; }
-.triangle.normal { clip-path: polygon(50% 0, 0 100%, 100% 100%); }
-.triangle.flipped { clip-path: polygon(50% 100%, 0 0, 100% 0); }
 .lang { display:none; }
 @media (max-width:768px){
 .hero-text h1 { font-size:2em; }
 .hero-text p { font-size:1em; }
 section { padding:30px 15px; }
-.triangle { width:180px; height:180px; }
 iframe { height:150px; }
 }
 @media (max-width:480px){
 .hero-text h1 { font-size:1.5em; }
 .hero-text p { font-size:0.9em; }
-.triangle { width:150px; height:150px; }
 iframe { height:120px; }
 .btn { padding:10px 15px; font-size:0.9em; }
 }
@@ -68,11 +61,7 @@ iframe { height:120px; }
 <section id="astorun" class="fade-in">
 <h2 class="lang en">About ASTORUN</h2>
 <h2 class="lang ua">Про ASTORUN</h2>
-<div style="display:flex; align-items:center; gap:20px; flex-wrap:wrap; justify-content:center;">
-<div style="flex:1; min-width:220px; display:flex; justify-content:center;">
-<img src="https://i.postimg.cc/XvxfCx7S/9i9i9.pngg" alt="ASTORUN Logo" class="triangle flipped">
-</div>
-<div style="flex:2; min-width:250px;">
+<div style="text-align:center;">
 <p class="lang en">
 ASTORUN is a creative cluster where artists, musicians, designers, and visionaries collaborate.<br><br>
 Founded in 2009 in Bila Tserkva, Ukraine, ASTORUN is officially recognized
@@ -86,24 +75,19 @@ ASTORUN — це творчий кластер, де митці, музикан�
 культурних проєктів та експериментів у мистецтві.
 </p>
 </div>
-</div>
 </section>
 
 <section id="about" class="fade-in">
 <h2 class="lang en">About Me</h2>
 <h2 class="lang ua">Про мене</h2>
-<div style="display:flex; align-items:center; gap:20px; flex-wrap:wrap; justify-content:center;">
-<div style="flex:2; min-width:220px;">
+<div style="text-align:center;">
 <p class="lang en">
 Hi, I’m AKZET, DJ and producer. I create new melodies, explore innovative sounds, and develop unique projects. I connect artists, musicians, and designers to collaborate and bring ideas to life.
 </p>
 <p class="lang ua">
 Привіт, я AKZET, ді-джей та продюсер. Створюю нові мелодії, досліджую інноваційні звуки та розвиваю унікальні проєкти. Об'єдную митців, музикантів і дизайнерів для співпраці та втілення ідей.
 </p>
-</div>
-<div style="flex:1; min-width:180px; display:flex; justify-content:center;">
-<img src="https://i.postimg.cc/TwL6D7qr/999.png" alt="AKZET Photo" class="triangle normal">
-</div>
+<img src="https://i.postimg.cc/TwL6D7qr/999.png" alt="AKZET Photo" style="width:250px; height:250px; object-fit:cover; margin-top:20px; border-radius:10px;">
 </div>
 </section>
 
@@ -112,13 +96,9 @@ Hi, I’m AKZET, DJ and producer. I create new melodies, explore innovative soun
 <h2 class="lang ua">Моя музика</h2>
 <p class="lang en">Listen to my works:</p>
 <p class="lang ua">Слухайте мої роботи:</p>
-<iframe style="border-radius:12px; width:100%;" src="https://open.spotify.com/embed/track/3qkV71mewrT3wwnCrxog6R?utm_source=generator&theme=0" height="152" frameborder="0" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-<iframe style="border-radius:12px; width:100%;" src="https://open.spotify.com/embed/track/3FViT3SzjWN6cgsz9BDtI3?utm_source=generator&theme=0" height="152" frameborder="0" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-<iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/album/6x9wU8w5wnxF8mlBuxj5Io?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy">
-<iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A1924245899&color=%235e595c&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/akzet" title="AKZET" target="_blank" style="color: #cccccc; text-decoration: none;">AKZET</a> · <a href="https://soundcloud.com/akzet/oh-gosh" title="Oh, Gosh!" target="_blank" style="color: #cccccc; text-decoration: none;">Oh, Gosh!</a></div>  
-<iframe id='AmazonMusicEmbedB0DQ5RF5NL' src='https://music.amazon.co.uk/embed/B0DQ5RF5NL/?id=430LHxpjk3&marketplaceId=A1F83G8C2ARO7P&musicTerritory=GB' width='100%' height='352px' frameBorder='0' style='border-radius:20px;max-width:500px'>
-</iframe>
-</iframe>
+<iframe style="border-radius:12px; width:100%;" src="https://open.spotify.com/embed/track/3qkV71mewrT3wwnCrxog6R?utm_source=generator&theme=0" height="152" frameborder="0" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+<iframe style="border-radius:12px; width:100%;" src="https://open.spotify.com/embed/track/3FViT3SzjWN6cgsz9BDtI3?utm_source=generator&theme=0" height="152" frameborder="0" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+<iframe style="border-radius:12px; width:100%;" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1924245899&color=%235e595c&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true" width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay"></iframe>
 </section>
 
 <section id="join" class="fade-in">
@@ -155,7 +135,6 @@ el.style.display = el.classList.contains(lang)? 'block':'none';
 const savedLanguage = localStorage.getItem('language') || 'en';
 window.addEventListener('DOMContentLoaded', () => setLanguage(savedLanguage));
 
-// Анімація при скролі
 function fadeInOnScroll() {
 document.querySelectorAll('.fade-in').forEach(el=>{
 const rect = el.getBoundingClientRect();
