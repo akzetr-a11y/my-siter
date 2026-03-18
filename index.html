@@ -1,72 +1,76 @@
 <!DOCTYPE html>
 <html lang="uk">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ASTORUN.LIVE | AKZET</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASTORUN.LIVE | AKZET</title>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body { margin:0; font-family: Arial, sans-serif; background:#0a0a0a; color:#fff; scroll-behavior:smooth; overflow-x: hidden; }
+        
+        /* Слайдер фону */
+        header { position:relative; height:100vh; display: flex; align-items: center; justify-content: center; overflow:hidden; }
+        .slide { position:absolute; width:100%; height:100%; background-size:cover; background-position:center; opacity:0; animation:fade 15s infinite; z-index: -1; }
+        .slide::before { content:""; position:absolute; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.6); }
+        .slide:nth-child(1){background-image:url('https://i.postimg.cc/Mpj4Kmvc/Tg5-X-j-F7-LBIcjxo-SZvaad-La-Ju-XA32-GAKGjm-H9p-Si-Pvg-VMFny-Yxb-IF-x5-Pr-PQ12-QQ-q-KQ7q-L8w-HGYz-Lw9v-An-Rc8.jpg'); animation-delay:0s;}
+        .slide:nth-child(2){background-image:url('https://i.postimg.cc/TPXq6rzm/xm-JBCl-SFEcy-SXHx1-SSXPY9j7v-04cx-Rpzz-NPFYkbq-L4-HL7-W8i3-Jnlow-LUn-EZ95-GQz-Wjd-XQ.jpg'); animation-delay:5s;}
+        .slide:nth-child(3){background-image:url('https://i.postimg.cc/B6ZJRVM6/YX3ev-7jk-Kmix-b7i-KC4s-Vzu28w-MTa-I7-Cya-Utr-Cd-No-Haf-EB-2-KJGS-x-Hwcyy-Gkqrx-Mc-1.jpg'); animation-delay:10s;}
+        @keyframes fade {0%,33%{opacity:1;}34%,100%{opacity:0;}}
 
-<link rel="icon" type="image/png" href="111.png">
-<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&display=swap" rel="stylesheet">
+        /* Панель мов */
+        .lang-panel { position:fixed; top:10px; left:0; right:0; z-index:999; display:flex; justify-content:center; gap:5px; flex-wrap: wrap; padding: 0 10px; }
+        .btn-lang { background: #c00; color: #fff; border: 1px solid rgba(255,255,255,0.2); padding: 8px 12px; font-weight: bold; cursor: pointer; border-radius: 4px; font-size: 11px; text-transform: uppercase; }
+        .btn-lang.active { background: #fff; color: #c00; }
 
-<style>
-body { margin:0; font-family:Arial,sans-serif; background:#111; color:#fff; scroll-behavior:smooth; }
-header { position:relative; height:100vh; overflow:hidden; }
-.slide { position:absolute; width:100%; height:100%; background-size:cover; background-position:center; opacity:0; animation:fade 15s infinite; }
-.slide::before { content:""; position:absolute; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.6); }
-.slide:nth-child(1){background-image:url('https://i.postimg.cc/Mpj4Kmvc/Tg5-X-j-F7-LBIcjxo-SZvaad-La-Ju-XA32-GAKGjm-H9p-Si-Pvg-VMFny-Yxb-IF-x5-Pr-PQ12-QQ-q-KQ7q-L8w-HGYz-Lw9v-An-Rc8.jpg'); animation-delay:0s;}
-.slide:nth-child(2){background-image:url('https://i.postimg.cc/TPXq6rzm/xm-JBCl-SFEcy-SXHx1-SSXPY9j7v-04cx-Rpzz-NPFYkbq-L4-HL7-W8i3-Jnlow-LUn-EZ95-GQz-Wjd-XQ.jpg'); animation-delay:5s;}
-.slide:nth-child(3){background-image:url('https://i.postimg.cc/B6ZJRVM6/YX3ev-7jk-Kmix-b7i-KC4s-Vzu28w-MTa-I7-Cya-Utr-Cd-No-Haf-EB-2-KJGS-x-Hwcyy-Gkqrx-Mc-1.jpg'); animation-delay:10s;}
-@keyframes fade {0%,33%{opacity:1;}34%,100%{opacity:0;}}
+        /* Центральний блок */
+        .hero-text { text-align:center; background:rgba(0,0,0,0.8); padding:30px; border-radius:15px; width: 90%; max-width: 450px; border: 1px solid #333; position: relative; z-index: 10; }
+        .hero-text h1 { font-family:'Oswald',sans-serif; font-size:2.8em; color:#c00; margin:0 0 15px; text-transform: uppercase; }
+        
+        /* Приховування текстів перекладу */
+        [data-t] { display: none !important; }
 
-/* ПАНЕЛЬ МОВ */
-.lang-panel { position:fixed; top:15px; left:5px; right:5px; z-index:1000; display:flex; justify-content:center; gap:3px; max-width: 500px; margin: 0 auto; }
-.btn-lang { background: #c00; color: #fff; border: 1px solid rgba(255,255,255,0.4); padding: 6px 0; font-weight: bold; cursor: pointer; border-radius: 4px; font-size: 9px; flex: 1; text-align: center; transition: 0.2s; }
-.btn-lang:hover, .btn-lang.active { background: #fff; color: #c00; }
+        .btn-main { display: block; width: 240px; margin: 10px auto; padding: 15px; background: #c00; color: #fff !important; text-decoration: none; font-weight: bold; border-radius: 8px; text-transform: uppercase; text-align: center; font-size: 14px; transition: 0.3s; }
+        .btn-book { background: #fff !important; color: #c00 !important; }
+        .btn-main:hover { opacity: 0.8; transform: scale(1.02); }
 
-.hero-text { position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); text-align:center; background:rgba(0,0,0,0.85); padding:25px 30px; border-radius:10px; width: 85%; max-width: 450px; z-index: 10; border: 1px solid #333;}
-.hero-text h1 { font-family:'Oswald',sans-serif; font-size:3em; color:#c00; margin:0 0 10px 0; text-transform: uppercase; }
+        /* Секції */
+        section { padding: 80px 20px; max-width: 1000px; margin: auto; text-align: center; }
+        h2 { font-family: 'Oswald', sans-serif; font-size: 2.5em; color: #c00; text-transform: uppercase; margin-bottom: 30px; }
+        
+        /* Музика Spotify */
+        .music-grid { display: flex; flex-direction: column; gap: 15px; margin: 30px 0; }
+        iframe { border-radius: 12px; border: none; width: 100%; background: transparent; }
 
-/* Кнопки в стовпчик */
-.hero-btns { display: flex; flex-direction: column; align-items: center; gap: 12px; margin-top: 20px; }
-.btn-main { width: 100%; max-width: 250px; padding:15px; background:#c00; color:#fff; text-decoration:none; font-weight:bold; border-radius:5px; transition:0.3s; text-transform: uppercase; border:none; cursor:pointer; text-align: center; }
-.btn-white { background: #fff !important; color: #c00 !important; }
+        /* Лого та Про нас */
+        .about-box { display: flex; align-items: center; justify-content: center; gap: 30px; flex-wrap: wrap; text-align: left; }
+        .about-box img { max-width: 250px; height: auto; }
+        .about-text { max-width: 500px; font-size: 1.1em; line-height: 1.6; color: #ccc; }
 
-section { padding: 40px 20px; max-width:900px; margin:auto; opacity:0; transform:translateY(30px); transition:1s ease-out; }
-h2 { font-family:'Oswald',sans-serif; color:#c00; text-align:center; margin-bottom:30px; text-transform: uppercase; letter-spacing: 2px; }
+        /* Контакти */
+        .contacts-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-top: 30px; }
+        .contact-link { background: #111; border: 1px solid #333; padding: 20px; color: #fff; text-decoration: none; font-weight: bold; border-radius: 8px; transition: 0.3s; }
+        .contact-link:hover { border-color: #c00; background: #1a1a1a; }
 
-.contacts-row { display: flex; justify-content: center; gap: 8px; width: 100%; margin-top: 20px; }
-.btn-contact { flex: 1; max-width: 150px; background: #c00; color: #fff; text-decoration: none; padding: 12px 0; font-weight: bold; border-radius: 4px; font-size: 11px; text-align: center; text-transform: uppercase; border: 1px solid rgba(255,255,255,0.2); transition: 0.2s; }
-
-footer { text-align:center; padding:40px 20px; background:#000; color:#aaa; border-top: 1px solid #222; }
-
-/* Приховуємо всі мови за замовчуванням */
-[data-t] { display: none; }
-
-@media (max-width:768px){
-    .hero-text h1 { font-size:2.2em; }
-    .btn-lang { font-size: 8px; }
-}
-</style>
+        footer { padding: 40px; text-align: center; border-top: 1px solid #222; color: #555; font-size: 14px; }
+    </style>
 </head>
 <body>
 
 <div class="lang-panel">
-    <button onclick="setLanguage('ua')" class="btn-lang" id="b-ua">UA</button>
-    <button onclick="setLanguage('en')" class="btn-lang" id="b-en">EN</button>
-    <button onclick="setLanguage('es')" class="btn-lang" id="b-es">ES</button>
-    <button onclick="setLanguage('de')" class="btn-lang" id="b-de">DE</button>
-    <button onclick="setLanguage('fr')" class="btn-lang" id="b-fr">FR</button>
-    <button onclick="setLanguage('ar')" class="btn-lang" id="b-ar">AR</button>
-    <button onclick="setLanguage('zh')" class="btn-lang" id="b-zh">ZH</button>
-    <button onclick="setLanguage('ja')" class="btn-lang" id="b-ja">JA</button>
+    <button onclick="setLang('ua')" class="btn-lang" id="b-ua">UA</button>
+    <button onclick="setLang('en')" class="btn-lang" id="b-en">EN</button>
+    <button onclick="setLang('es')" class="btn-lang" id="b-es">ES</button>
+    <button onclick="setLang('de')" class="btn-lang" id="b-de">DE</button>
+    <button onclick="setLang('fr')" class="btn-lang" id="b-fr">FR</button>
+    <button onclick="setLang('ar')" class="btn-lang" id="b-ar">AR</button>
+    <button onclick="setLang('zh')" class="btn-lang" id="b-zh">ZH</button>
+    <button onclick="setLang('ja')" class="btn-lang" id="b-ja">JA</button>
 </div>
 
 <header>
     <div class="slide"></div><div class="slide"></div><div class="slide"></div>
-    
     <div class="hero-text">
         <h1>ASTORUN.LIVE</h1>
-        
         <p data-t="ua">Музика. Шоу. Енергія. Ми керуємо атмосферою.</p>
         <p data-t="en">Music. Show. Energy. We control the vibe.</p>
         <p data-t="es">Música. Show. Energía. Controlamos la vibra.</p>
@@ -75,27 +79,43 @@ footer { text-align:center; padding:40px 20px; background:#000; color:#aaa; bord
         <p data-t="ar">الموسيقى. العرض. الطاقة. نحن نتحكم في الأجواء.</p>
         <p data-t="zh">音乐。表演。能量。我们掌控氛围。</p>
         <p data-t="ja">音楽。ショー。エネルギー。私たちがバイブスを操る。</p>
-
-        <div class="hero-btns">
+        
+        <div style="margin-top: 25px;">
             <a href="#contacts" class="btn-main">
                 <span data-t="ua">Зв’язатися</span><span data-t="en">Contact</span><span data-t="es">Contacto</span><span data-t="de">Kontakt</span><span data-t="fr">Contact</span><span data-t="ar">اتصل بنا</span><span data-t="zh">联系我们</span><span data-t="ja">連絡先</span>
             </a>
-            <a href="booking.html" class="btn-main btn-white">
+            <a href="booking.html" class="btn-main btn-book">
                 <span data-t="ua">Замовити Шоу</span><span data-t="en">Book a Show</span><span data-t="es">Reservar</span><span data-t="de">Buchen</span><span data-t="fr">Réserver</span><span data-t="ar">احجز عرضًا</span><span data-t="zh">预订表演</span><span data-t="ja">予約する</span>
             </a>
         </div>
     </div>
 </header>
 
-<section id="astorun" class="fade-in">
-    <h2 data-t="ua">Еволюція ASTORUN</h2>
-    <h2 data-t="en">Evolution of ASTORUN</h2>
-    <div style="display:flex; align-items:center; gap:20px; flex-wrap:wrap; justify-content:center;">
-      <div style="flex:1; min-width:180px;"><img src="https://i.ibb.co/cSGgq3Wd/Chat-GPT-Image-21-2025-09-04-55.png" style="width:100%; border-radius:5px;"></div>
-      <div style="flex:2; min-width:250px;">
-        <div data-t="ua"><strong>Event Label & Production Studio.</strong><br><br>Історія почалася у 2009 році. Сьогодні ASTORUN — це міжнародний простір індивідуальності.</div>
-        <div data-t="en"><strong>Event Label & Production Studio.</strong><br><br>The story began in 2009. Today ASTORUN is an international space.</div>
+<section id="about">
+    <h2 data-t="ua">Еволюція ASTORUN</h2><h2 data-t="en">Evolution of ASTORUN</h2>
+    <div class="about-box">
+        <img src="https://i.ibb.co/cSGgq3Wd/Chat-GPT-Generated-Image.png" alt="ASTORUN LOGO">
+        <div class="about-text">
+            <p data-t="ua"><strong>Event Label & Production Studio.</strong><br>Історія почалася у 2009. Сьогодні ASTORUN — це міжнародний простір.</p>
+            <p data-t="en"><strong>Event Label & Production Studio.</strong><br>The story began in 2009. Today ASTORUN is an International space.</p>
         </div>
+    </div>
+</section>
+
+<section id="music">
+    <h2 data-t="ua">Музика</h2><h2 data-t="en">Music</h2>
+    <div class="music-grid">
+        <iframe src="https://open.spotify.com/embed/track/3f68WdF3rC68Z39vYf667L" height="152" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+        <iframe src="https://open.spotify.com/embed/track/2Z7O1S2yD3M4X5c6V7B8N9" height="152" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+    </div>
+</section>
+
+<section id="contacts">
+    <h2 data-t="ua">Контакти</h2><h2 data-t="en">Contacts</h2>
+    <div class="contacts-grid">
+        <a href="https://t.me/dunabuda" class="contact-link">Telegram</a>
+        <a href="https://instagram.com/astorun" class="contact-link">Instagram</a>
+        <a href="mailto:akzet.music@gmail.com" class="contact-link">Email</a>
     </div>
 </section>
 
@@ -104,42 +124,33 @@ footer { text-align:center; padding:40px 20px; background:#000; color:#aaa; bord
 </footer>
 
 <script>
-function setLanguage(lang){
-    localStorage.setItem('language', lang);
-    
-    // Ховаємо все
-    document.querySelectorAll('[data-t]').forEach(el => {
-        el.style.setProperty('display', 'none', 'important');
-    });
-    
-    // Показуємо обрану мову
-    document.querySelectorAll('[data-t="' + lang + '"]').forEach(el => {
-        const displayType = (el.tagName === 'SPAN') ? 'inline-block' : 'block';
-        el.style.setProperty('display', displayType, 'important');
-    });
+    function setLang(l) {
+        localStorage.setItem('lang', l);
+        
+        // Знаходимо абсолютно всі елементи з перекладом і ховаємо їх
+        const all = document.querySelectorAll('[data-t]');
+        all.forEach(el => {
+            el.style.setProperty('display', 'none', 'important');
+        });
+        
+        // Показуємо тільки потрібну мову
+        const active = document.querySelectorAll('[data-t="' + l + '"]');
+        active.forEach(el => {
+            const displayType = (el.tagName === 'SPAN') ? 'inline-block' : 'block';
+            el.style.setProperty('display', displayType, 'important');
+        });
+        
+        // Підсвічуємо активну кнопку
+        document.querySelectorAll('.btn-lang').forEach(b => b.classList.remove('active'));
+        const btn = document.getElementById('b-' + l);
+        if(btn) btn.classList.add('active');
+    }
 
-    // Активна кнопка в панелі
-    document.querySelectorAll('.btn-lang').forEach(b => b.classList.remove('active'));
-    const activeBtn = document.getElementById('b-' + lang);
-    if(activeBtn) activeBtn.classList.add('active');
-}
-
-window.addEventListener('DOMContentLoaded', () => {
-    const saved = localStorage.getItem('language') || 'ua';
-    setLanguage(saved);
-});
-
-function fadeInOnScroll() {
-    document.querySelectorAll('.fade-in').forEach(el=>{
-        const rect = el.getBoundingClientRect();
-        if(rect.top < window.innerHeight - 50){
-            el.style.opacity = 1;
-            el.style.transform = 'translateY(0)';
-        }
-    });
-}
-window.addEventListener('scroll', fadeInOnScroll);
-fadeInOnScroll();
+    // Запуск
+    window.onload = () => {
+        const saved = localStorage.getItem('lang') || 'ua';
+        setLang(saved);
+    };
 </script>
 
 </body>
