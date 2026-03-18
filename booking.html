@@ -6,136 +6,203 @@
     <title>Booking | ASTORUN.LIVE</title>
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600&display=swap" rel="stylesheet">
     <style>
-        body { margin:0; font-family: 'Arial', sans-serif; background:#111; color:#fff; }
-        .container { max-width: 800px; margin: 0 auto; padding: 40px 20px; }
-        h1, h2 { font-family: 'Oswald', sans-serif; color: #c00; text-transform: uppercase; text-align: center; }
+        body { margin:0; font-family: Arial, sans-serif; background:#111; color:#fff; scroll-behavior: smooth; }
+        .container { max-width: 800px; margin: 0 auto; padding: 60px 20px; }
+        h1 { font-family: 'Oswald', sans-serif; color: #c00; text-transform: uppercase; text-align: center; font-size: 2.5em; margin-bottom: 30px; }
         
-        /* СТИЛЬ ФОРМИ */
         .booking-card { background: #1a1a1a; padding: 30px; border-radius: 15px; border: 1px solid #333; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
         .form-group { margin-bottom: 20px; }
         label { display: block; margin-bottom: 8px; font-weight: bold; color: #ccc; font-size: 14px; }
         input, select, textarea { 
             width: 100%; padding: 12px; background: #222; border: 1px solid #444; 
-            color: #fff; border-radius: 5px; box-sizing: border-box; font-size: 16px;
+            color: #fff; border-radius: 5px; box-sizing: border-box; font-size: 16px; transition: 0.3s;
         }
-        input:focus { border-color: #c00; outline: none; }
+        input:focus, select:focus { border-color: #c00; outline: none; background: #2a2a2a; }
 
         .btn-submit { 
-            width: 100%; padding: 15px; background: #c00; color: #fff; border: none; 
-            border-radius: 5px; font-weight: bold; cursor: pointer; text-transform: uppercase; transition: 0.3s;
+            width: 100%; padding: 18px; background: #c00; color: #fff; border: none; 
+            border-radius: 5px; font-weight: bold; cursor: pointer; text-transform: uppercase; font-size: 16px; transition: 0.3s;
+            margin-top: 10px;
         }
-        .btn-submit:hover { background: #ff0000; transform: translateY(-2px); }
+        .btn-submit:hover { background: #ff0000; transform: translateY(-2px); box-shadow: 0 5px 15px rgba(204,0,0,0.4); }
 
-        /* БЛОК ПРАЙСІВ ТА ВІДЕО */
+        .back-link { display: inline-block; margin-bottom: 20px; color: #666; text-decoration: none; transition: 0.3s; font-weight: bold; }
+        .back-link:hover { color: #c00; }
+
         .info-section { margin-top: 50px; display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
         .info-box { background: #1a1a1a; padding: 20px; border-radius: 10px; border-left: 4px solid #c00; }
-        .video-container { margin-top: 30px; border-radius: 10px; overflow: hidden; border: 1px solid #333; }
+        .video-container { margin-top: 30px; border-radius: 10px; overflow: hidden; border: 1px solid #333; aspect-ratio: 16/9; }
         
-        @media (max-width: 600px) { .info-section { grid-template-columns: 1fr; } }
-        .success-msg { display: none; color: #0f0; text-align: center; margin-top: 20px; font-weight: bold; }
+        .success-msg { display: none; background: #060; color: #fff; text-align: center; padding: 20px; border-radius: 5px; margin-top: 20px; font-weight: bold; }
+        
+        /* Сховати всі мови за замовчуванням */
+        .lang { display: none; }
+
+        @media (max-width: 600px) { 
+            .info-section { grid-template-columns: 1fr; } 
+            h1 { font-size: 1.8em; } 
+            .container { padding: 40px 15px; }
+        }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <a href="index.html" style="color: #666; text-decoration: none;">← На головну</a>
-    <h1>Booking / Замовлення Шоу</h1>
+    <a href="index.html" class="back-link">
+        <span class="lang ua">← На головну</span>
+        <span class="lang en">← Back Home</span>
+        <span class="lang es">← Volver</span>
+        <span class="lang de">← Zurück</span>
+        <span class="lang fr">← Retour</span>
+        <span class="lang ar">← العودة</span>
+        <span class="lang zh">← 返回主页</span>
+        <span class="lang ja">← 戻る</span>
+    </a>
+
+    <h1>
+        <span class="lang ua">Замовити шоу</span>
+        <span class="lang en">Book a Show</span>
+        <span class="lang es">Reservar evento</span>
+        <span class="lang de">Show buchen</span>
+        <span class="lang fr">Réserver</span>
+        <span class="lang ar">حجز عرض</span>
+        <span class="lang zh">预订演出</span>
+        <span class="lang ja">予約する</span>
+    </h1>
 
     <div class="booking-card">
         <form id="bookingForm">
             <div class="form-group">
-                <label>Країна / Country</label>
-                <input type="text" id="country" placeholder="Наприклад: Україна, Польща..." required>
+                <label class="lang ua">Ваша країна</label>
+                <label class="lang en">Your Country</label>
+                <label class="lang es">Tu país</label>
+                <label class="lang de">Ihr Land</label>
+                <input type="text" id="country" required placeholder="...">
             </div>
 
             <div class="form-group">
-                <label>Дата та Час / Date & Time</label>
+                <label class="lang ua">Дата та час події</label>
+                <label class="lang en">Event Date & Time</label>
                 <input type="datetime-local" id="datetime" required>
             </div>
 
             <div class="form-group">
-                <label>Тип заходу / Event Type</label>
+                <label class="lang ua">Тип заходу</label>
+                <label class="lang en">Event Type</label>
                 <select id="eventType">
-                    <option value="Концерт">Концерт / Concert</option>
-                    <option value="Весілля">Весілля / Wedding</option>
-                    <option value="Корпоратив">Корпоратив / Corporate</option>
-                    <option value="Приватна вечірка">Вечірка / Private Party</option>
+                    <option value="Концерт">Concert / Концерт</option>
+                    <option value="Весілля">Wedding / Весілля</option>
+                    <option value="Корпоратив">Corporate / Корпоратив</option>
+                    <option value="Приватна вечірка">Party / Вечірка</option>
                 </select>
             </div>
 
             <div class="form-group">
-                <label>Кількість гостей / Guests</label>
-                <input type="number" id="guests" placeholder="Наприклад: 100">
+                <label class="lang ua">Кількість людей (публіка)</label>
+                <label class="lang en">Number of Guests</label>
+                <input type="number" id="guests" placeholder="100">
             </div>
 
             <div class="form-group">
-                <label>Що саме вас цікавить? / Services</label>
-                <input type="text" id="services" placeholder="DJ, Pole Dance, Light Show...">
+                <label class="lang ua">Що саме ви хочете? (DJ, Pole Dance...)</label>
+                <label class="lang en">Services (DJ, Pole Dance, etc.)</label>
+                <input type="text" id="services" placeholder="...">
             </div>
 
             <div class="form-group">
-                <label>Ваш Бюджет / Budget ($)</label>
-                <input type="text" id="budget" placeholder="Наприклад: 1000$">
+                <label class="lang ua">Який ваш бюджет ($)</label>
+                <label class="lang en">Your Budget ($)</label>
+                <input type="text" id="budget" placeholder="1000$">
             </div>
 
             <div class="form-group">
-                <label>Контакти (Email/Phone/Telegram)</label>
-                <input type="text" id="contacts" placeholder="@username або +380..." required>
+                <label class="lang ua">Контакти (Email / Phone / Telegram)</label>
+                <label class="lang en">Contacts (Email / Phone)</label>
+                <input type="text" id="contacts" required placeholder="...">
             </div>
 
-            <button type="submit" class="btn-submit">Надіслати запит / Send Request</button>
-            <div id="successMessage" class="success-msg">Дякуємо! Запит надіслано. Ми зв'яжемося з вами.</div>
+            <button type="submit" class="btn-submit">
+                <span class="lang ua">Надіслати запит</span>
+                <span class="lang en">Send Request</span>
+                <span class="lang es">Enviar</span>
+                <span class="lang de">Absenden</span>
+                <span class="lang fr">Envoyer</span>
+                <span class="lang ar">إرسال</span>
+                <span class="lang zh">发送</span>
+                <span class="lang ja">送信</span>
+            </button>
+
+            <div id="successMessage" class="success-msg">
+                <span class="lang ua">✅ Дякуємо! Запит надіслано організатору.</span>
+                <span class="lang en">✅ Success! Request sent to organizer.</span>
+            </div>
         </form>
     </div>
 
     <div class="info-section">
         <div class="info-box">
-            <h3>Прайс-лист</h3>
-            <ul style="list-style: none; padding: 0; font-size: 14px; color: #aaa;">
-                <li>🎧 DJ Set — від $200</li>
-                <li>💃 Pole Dance — від $150</li>
-                <li>🔥 Full Show — від $500</li>
-            </ul>
+            <h3 class="lang ua">Прайс та Стилі</h3>
+            <h3 class="lang en">Prices & Styles</h3>
+            <p style="font-size: 14px; color: #aaa;">Tech House, House, EDM. <br>DJ Set: $200+ | Pole Dance: $150+</p>
         </div>
         <div class="info-box">
-            <h3>Стилі роботи</h3>
-            <p style="font-size: 14px; color: #aaa;">Tech House, EDM, Deep House. Ми забезпечуємо повний технічний райдер за запитом.</p>
+            <h3 class="lang ua">Тех. райдер</h3>
+            <h3 class="lang en">Tech Rider</h3>
+            <p style="font-size: 14px; color: #aaa;">Ми надаємо професійне обладнання за домовленістю.</p>
         </div>
     </div>
 
     <div class="video-container">
-        <iframe width="100%" height="315" src="https://www.youtube.com/embed/ВАШ_ID_ВІДЕО" frameborder="0" allowfullscreen></iframe>
+        <iframe width="100%" height="100%" src="https://www.youtube.com/embed/ELBYTlDsGOU" frameborder="0" allowfullscreen></iframe>
     </div>
 </div>
 
 <script>
-    const token = "ВАШ_ТОКЕН_БОТА"; // Вставте сюди токен від @BotFather
-    const chatId = "ВАШ_ID_ЧАТУ";   // Вставте сюди ваш ID від @userinfobot
+    // --- ДАНІ ТЕЛЕГРАМ ---
+    const token = "8719454986:AAHBjFbb75fzFi9amjT5gHAsqSP3XcEaK8Q";
+    const chatId = "573241398";
+    // --------------------
 
+    // Функція перемикання мови
+    function updateLanguage() {
+        const lang = localStorage.getItem('language') || 'ua';
+        document.querySelectorAll('.lang').forEach(el => {
+            if (el.classList.contains(lang)) {
+                el.style.display = 'inline-block';
+            } else {
+                el.style.display = 'none';
+            }
+        });
+    }
+
+    window.addEventListener('DOMContentLoaded', updateLanguage);
+
+    // Відправка форми
     document.getElementById('bookingForm').addEventListener('submit', function(e) {
         e.preventDefault();
 
-        // Збір даних
         const message = `
-🌟 **НОВЕ ЗАМОВЛЕННЯ!**
-🌍 Країна: ${document.getElementById('country').value}
-📅 Дата: ${document.getElementById('datetime').value}
-🎉 Тип: ${document.getElementById('eventType').value}
-👥 Гості: ${document.getElementById('guests').value}
-🎭 Послуги: ${document.getElementById('services').value}
-💰 Бюджет: ${document.getElementById('budget').value}
-📞 Контакт: ${document.getElementById('contacts').value}
+📩 **NEW BOOKING!**
+━━━━━━━━━━━━━━━━
+🌍 Country: ${document.getElementById('country').value}
+📅 Time: ${document.getElementById('datetime').value}
+🎉 Event: ${document.getElementById('eventType').value}
+👥 Guests: ${document.getElementById('guests').value}
+🎭 Wants: ${document.getElementById('services').value}
+💰 Budget: ${document.getElementById('budget').value}
+📞 Contact: ${document.getElementById('contacts').value}
+━━━━━━━━━━━━━━━━
         `;
 
-        // Відправка в Telegram
         const url = `https://api.telegram.org/bot${token}/sendMessage?chat_id=${chatId}&text=${encodeURIComponent(message)}&parse_mode=Markdown`;
 
         fetch(url).then(response => {
             if (response.ok) {
                 document.getElementById('successMessage').style.display = 'block';
                 document.getElementById('bookingForm').reset();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
             } else {
-                alert("Помилка відправки. Спробуйте ще раз.");
+                alert("Error! Please try again or contact via Telegram.");
             }
         });
     });
