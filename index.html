@@ -18,30 +18,50 @@ header { position:relative; height:100vh; overflow:hidden; }
 .slide:nth-child(3){background-image:url('https://i.postimg.cc/B6ZJRVM6/YX3ev-7jk-Kmix-b7i-KC4s-Vzu28w-MTa-I7-Cya-Utr-Cd-No-Haf-EB-2-KJGS-x-Hwcyy-Gkqrx-Mc-1.jpg'); animation-delay:10s;}
 @keyframes fade {0%,33%{opacity:1;}34%,100%{opacity:0;}}
 
+/* --- 🔹 ХЕДЕР & ТЕКСТ --- */
 .hero-text { position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); text-align:center; background:rgba(0,0,0,0.85); padding:25px 30px; border-radius:10px; width: 85%; max-width: 600px; z-index: 10;}
 .hero-text h1 { font-family:'Oswald',sans-serif; font-size:3em; color:#c00; margin:0 0 10px 0; text-transform: uppercase; }
 .hero-text p { font-family:'Oswald',sans-serif; font-size:1.4em; color:#fff; margin:0 0 15px 0; }
 
-/* Кнопки мов */
-.lang-panel { position:fixed; top:20px; right:20px; z-index:999; display:flex; gap:5px; flex-wrap:wrap; justify-content:flex-end; max-width:180px; }
-.btn-lang { background: #c00; color: #fff; border: 1px solid rgba(255,255,255,0.3); padding: 4px 6px; font-weight: bold; cursor: pointer; border-radius: 4px; font-size: 11px; min-width: 35px; transition: 0.2s; }
+/* --- 🔹 ПАНЕЛЬ МОВ (Один ряд зверху) --- */
+.lang-panel { position:fixed; top:15px; left:10px; right:10px; z-index:1000; display:flex; justify-content:center; gap:4px; max-width: 320px; margin: 0 auto; }
+.btn-lang { background: #c00; color: #fff; border: 1px solid rgba(255,255,255,0.4); padding: 5px 0; font-weight: bold; cursor: pointer; border-radius: 4px; font-size: 10px; flex: 1; text-align: center; transition: 0.2s; }
 .btn-lang:hover { background: #fff; color: #c00; }
 
+/* --- 🔹 ЗАГАЛЬНІ СТИЛІ СЕКЦІЙ --- */
 section { padding: 40px 20px; max-width:900px; margin:auto; opacity:0; transform:translateY(30px); transition:1s ease-out; }
 h2 { font-family:'Oswald',sans-serif; color:#c00; text-align:center; margin-bottom:30px; text-transform: uppercase; letter-spacing: 2px; }
-.btn { display:inline-block; padding:12px 20px; background:#c00; color:#fff; text-decoration:none; font-weight:bold; border-radius:5px; margin:10px; transition:0.3s; text-transform: uppercase; font-size: 0.9em; border:none; cursor:pointer;}
-.btn:hover { background:#900; transform: scale(1.05); }
+.fade-in { opacity: 1; transform: translateY(0); } /* Для тих сецій, що відразу видно */
 
+/* Основна кнопка (Надіслати заявку) */
+.btn { display:inline-block; padding:12px 20px; background:#c00; color:#fff; text-decoration:none; font-weight:bold; border-radius:5px; margin:10px 0; transition:0.3s; text-transform: uppercase; font-size: 0.9em; border:none; cursor:pointer; width: 100%; box-sizing: border-box;}
+.btn:hover { background:#900; transform: scale(1.02); }
+
+/* --- 🔹 КОНТАКТИ (Ряд на мобільному) --- */
+.contacts-row { display: flex; justify-content: space-between; gap: 8px; max-width: 500px; margin: 20px auto 0 auto; width: 100%; }
+.btn-contact { flex: 1; display: inline-flex; align-items: center; justify-content: center; background: #c00; color: #fff; text-decoration: none; padding: 10px 0; font-weight: bold; border-radius: 4px; font-size: 11px; text-transform: uppercase; text-align: center; transition: 0.2s; border: 1px solid rgba(255,255,255,0.2); }
+.btn-contact:hover { background: #900; }
+
+/* --- 🔹 ІНШІ СТИЛІ --- */
 .service-list { list-style: none; padding: 0; }
 .service-list li { margin-bottom: 15px; border-left: 3px solid #c00; padding-left: 15px; }
 footer { text-align:center; padding:40px 20px; background:#000; color:#aaa; border-top: 1px solid #222; }
 .lang { display:none; }
 
+/* --- 🔹 АДАПТИВНІСТЬ ДЛЯ МОБІЛЬНИХ --- */
 @media (max-width:768px){
-.hero-text h1 { font-size:2em; }
+.hero-text h1 { font-size:2.2em; }
 .hero-text p { font-size:1em; }
 section { padding:30px 15px; }
-iframe { height:150px; }
+iframe { height:180px; }
+.lang-panel { gap: 2px; top: 10px; }
+.btn-lang { font-size: 9px; padding: 4px 0; }
+.btn-contact { font-size: 10px; padding: 9px 0; gap: 4px; }
+}
+
+@media (max-width:360px){
+.btn-lang { font-size: 8px; }
+.btn-contact { font-size: 9px; }
 }
 </style>
 </head>
@@ -73,27 +93,20 @@ iframe { height:150px; }
     <p class="lang zh">音乐。表演。能量。我们掌控氛围。</p>
     <p class="lang ja">音楽。ショー。エネルギー。私たちがバイブスを操る。</p>
     
-    <a href="#contacts" class="btn lang ua">Зв’язатися</a>
-    <a href="#contacts" class="btn lang en">Contact Us</a>
-    <a href="#contacts" class="btn lang es">Contactar</a>
-    <a href="#contacts" class="btn lang de">Kontakt</a>
-    <a href="#contacts" class="btn lang fr">Contactez-nous</a>
-    <a href="#contacts" class="btn lang ar">اتصل بنا</a>
-    <a href="#contacts" class="btn lang zh">联系我们</a>
-    <a href="#contacts" class="btn lang ja">お問い合わせ</a>
+    <a href="#contacts" class="btn lang ua" style="width:auto; display:inline-block; padding: 12px 25px;">Зв’язатися</a>
+    <a href="#contacts" class="btn lang en" style="width:auto; display:inline-block; padding: 12px 25px;">Contact Us</a>
+    <a href="#contacts" class="btn lang es" style="width:auto; display:inline-block; padding: 12px 25px;">Contactar</a>
+    <a href="#contacts" class="btn lang de" style="width:auto; display:inline-block; padding: 12px 25px;">Kontakt</a>
+    <a href="#contacts" class="btn lang fr" style="width:auto; display:inline-block; padding: 12px 25px;">Contactez-nous</a>
+    <a href="#contacts" class="btn lang ar" style="width:auto; display:inline-block; padding: 12px 25px;">اتصل بنا</a>
+    <a href="#contacts" class="btn lang zh" style="width:auto; display:inline-block; padding: 12px 25px;">联系我们</a>
+    <a href="#contacts" class="btn lang ja" style="width:auto; display:inline-block; padding: 12px 25px;">お問い合わせ</a>
 </div>
 </header>
 
 <section id="astorun" class="fade-in">
 <h2 class="lang ua">Еволюція ASTORUN</h2>
 <h2 class="lang en">Evolution of ASTORUN</h2>
-<h2 class="lang es">Evolución de ASTORUN</h2>
-<h2 class="lang de">Evolution von ASTORUN</h2>
-<h2 class="lang fr">L'évolution d'ASTORUN</h2>
-<h2 class="lang ar">تطور ASTORUN</h2>
-<h2 class="lang zh">ASTORUN 的演变</h2>
-<h2 class="lang ja">ASTORUN の進化</h2>
-
 <div style="display:flex; align-items:center; gap:20px; flex-wrap:wrap; justify-content:center;">
   <div style="flex:1; min-width:180px;">
     <img src="https://i.ibb.co/cSGgq3Wd/Chat-GPT-Image-21-2025-09-04-55.png" alt="Astorun Logo" style="width:100%; height:auto; border-radius:5px;">
@@ -107,34 +120,17 @@ iframe { height:150px; }
       <strong>Event Label & Production Studio.</strong><br><br>
       The story began in 2009. Today ASTORUN is an international hub where music and show merge into a single energy. We believe: the one who creates the sound controls the event.
     </div>
-    <div class="lang es">
-      <strong>Event Label & Production Studio.</strong><br><br>
-      La historia comenzó en 2009. Hoy ASTORUN es un centro internacional donde la música y el espectáculo se fusionan. Creemos: quien crea el sonido controla el evento.
-    </div>
-    </div>
+  </div>
 </div>
-</section>
-
-<section id="services" class="fade-in">
-<h2 class="lang ua">Що ми робимо</h2>
-<h2 class="lang en">Our Directions</h2>
-<ul class="service-list">
-    <li class="lang ua"><strong>MUSIC & DJING:</strong> Авторські сети та саунд-продюсування.</li>
-    <li class="lang en"><strong>MUSIC & DJING:</strong> Original sets and sound production.</li>
-    <li class="lang ua"><strong>SHOW CASE:</strong> Pole Dance, Break-dance акробатика та світлові шоу.</li>
-    <li class="lang en"><strong>SHOW CASE:</strong> Pole Dance, Break-dance acrobatics, and light shows.</li>
-    <li class="lang ua"><strong>PRODUCTION:</strong> Фото та відеозйомка заходів.</li>
-    <li class="lang en"><strong>PRODUCTION:</strong> Photo and video production for events.</li>
-</ul>
 </section>
 
 <section id="music" class="fade-in">
 <h2 class="lang ua">Музика та Шоу</h2>
 <h2 class="lang en">Music & Show</h2>
 
-<iframe style="border-radius:12px; margin-bottom:10px;" src="https://open.spotify.com/embed/album/3oUbUtzJ7wfPNEJ3HlE27T?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-<iframe style="border-radius:12px; margin-bottom:10px;" src="https://open.spotify.com/embed/album/5rh4nf54GwrTLupAl6QkX5?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-<iframe style="border-radius:12px; margin-bottom:10px;" src="https://open.spotify.com/embed/album/0u0SYKZFNzIhKI33OnQrmD?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+<iframe style="border-radius:12px; margin-bottom:10px; border:none;" src="https://open.spotify.com/embed/album/3oUbUtzJ7wfPNEJ3HlE27T?utm_source=generator" width="100%" height="152" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+<iframe style="border-radius:12px; margin-bottom:10px; border:none;" src="https://open.spotify.com/embed/album/5rh4nf54GwrTLupAl6QkX5?utm_source=generator" width="100%" height="152" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+<iframe style="border-radius:12px; margin-bottom:10px; border:none;" src="https://open.spotify.com/embed/album/0u0SYKZFNzIhKI33OnQrmD?utm_source=generator" width="100%" height="152" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
 
 <div style="position:relative; padding-bottom:56.25%; height:0; overflow:hidden; max-width:100%; border-radius:10px; margin-top:20px;">
     <iframe src="https://www.youtube.com/embed/ELBYTlDsGOU?si=2HE8pGjgdvdSmjGQ" title="YouTube video" frameborder="0" allowfullscreen style="position:absolute; top:0; left:0; width:100%; height:100%;"></iframe>
@@ -153,10 +149,11 @@ iframe { height:150px; }
 <section id="contacts" class="fade-in">
 <h2 class="lang ua">Контакти</h2>
 <h2 class="lang en">Contacts</h2>
-<div style="display:flex; justify-content:center; flex-wrap:wrap; gap:10px;">
-    <a class="btn" href="https://instagram.com/astorun" target="_blank">Instagram</a>
-    <a class="btn" href="https://t.me/dunabuda" target="_blank">Telegram</a>
-    <a class="btn" href="mailto:akzet.music@gmail.com">Email</a>
+
+<div class="contacts-row">
+    <a class="btn-contact" href="https://instagram.com/astorun" target="_blank">INSTAGRAM</a>
+    <a class="btn-contact" href="https://t.me/dunabuda" target="_blank">TELEGRAM</a>
+    <a class="btn-contact" href="mailto:akzet.music@gmail.com">EMAIL</a>
 </div>
 </section>
 
@@ -170,7 +167,7 @@ function setLanguage(lang){
   localStorage.setItem('language', lang);
   document.querySelectorAll('.lang').forEach(el=>{
     // Спеціальна логіка для заголовків, які є спільними для всіх мов
-    if(el.classList.contains('ua') && el.classList.contains('en') && el.classList.contains('es')) {
+    if(el.classList.contains('ua') && el.classList.contains('en') && el.classList.contains('ja')) {
         el.style.display = 'block';
     } else {
         el.style.display = el.classList.contains(lang)? 'block':'none';
