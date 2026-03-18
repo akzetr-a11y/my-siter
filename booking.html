@@ -9,154 +9,125 @@
         body { margin:0; font-family: Arial, sans-serif; background:#111; color:#fff; scroll-behavior: smooth; }
         .container { max-width: 850px; margin: 0 auto; padding: 60px 20px; }
         h1 { font-family: 'Oswald', sans-serif; color: #c00; text-transform: uppercase; text-align: center; font-size: 2.5em; margin-bottom: 30px; }
-        
         .booking-card { background: #1a1a1a; padding: 30px; border-radius: 15px; border: 1px solid #333; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
         .form-group { margin-bottom: 20px; }
         label { display: block; margin-bottom: 8px; font-weight: bold; color: #ccc; font-size: 14px; }
-        input, select, textarea { 
-            width: 100%; padding: 12px; background: #222; border: 1px solid #444; 
-            color: #fff; border-radius: 5px; box-sizing: border-box; font-size: 16px; transition: 0.3s;
-        }
+        input, select, textarea { width: 100%; padding: 12px; background: #222; border: 1px solid #444; color: #fff; border-radius: 5px; box-sizing: border-box; font-size: 16px; transition: 0.3s; }
         input:focus, select:focus, textarea:focus { border-color: #c00; outline: none; background: #2a2a2a; }
-
-        .terms-box { 
-            background: rgba(204,0,0,0.1); border: 1px solid #c00; padding: 20px; 
-            border-radius: 8px; margin-bottom: 25px; font-size: 14px; color: #eee; line-height: 1.6;
-        }
-        .terms-box b { color: #c00; font-size: 1.1em; }
-
-        .btn-submit { 
-            width: 100%; padding: 18px; background: #c00; color: #fff; border: none; 
-            border-radius: 5px; font-weight: bold; cursor: pointer; text-transform: uppercase; font-size: 16px; transition: 0.3s;
-        }
+        .terms-box { background: rgba(204,0,0,0.1); border: 1px solid #c00; padding: 20px; border-radius: 8px; margin-bottom: 25px; font-size: 14px; color: #eee; line-height: 1.6; }
+        .terms-box b { color: #c00; }
+        .btn-submit { width: 100%; padding: 18px; background: #c00; color: #fff; border: none; border-radius: 5px; font-weight: bold; cursor: pointer; text-transform: uppercase; font-size: 16px; transition: 0.3s; }
         .btn-submit:hover { background: #ff0000; transform: translateY(-2px); box-shadow: 0 5px 15px rgba(204,0,0,0.4); }
-
-        .back-link { display: inline-block; margin-bottom: 20px; color: #666; text-decoration: none; font-weight: bold; transition: 0.3s; }
-        .back-link:hover { color: #c00; }
-
+        .info-section { margin-top: 50px; display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .info-box { background: #1a1a1a; padding: 20px; border-radius: 10px; border-left: 4px solid #c00; }
+        .video-container { margin-top: 30px; border-radius: 10px; overflow: hidden; border: 1px solid #333; aspect-ratio: 16/9; }
         .success-msg { display: none; background: #060; color: #fff; text-align: center; padding: 20px; border-radius: 5px; margin-top: 20px; font-weight: bold; }
         .lang { display: none; }
-
-        @media (max-width: 600px) { h1 { font-size: 1.8em; } .container { padding: 40px 15px; } }
+        @media (max-width: 600px) { .info-section { grid-template-columns: 1fr; } h1 { font-size: 1.8em; } }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <a href="index.html" class="back-link">
-        <span class="lang ua">← На головну</span>
-        <span class="lang en">← Back Home</span>
-        <span class="lang es">← Inicio</span>
-        <span class="lang de">← Startseite</span>
-        <span class="lang fr">← Accueil</span>
-        <span class="lang ar" dir="rtl">← العودة</span>
-        <span class="lang zh">← 返回主页</span>
-        <span class="lang ja">← ホームへ</span>
-    </a>
+    <a href="index.html" style="color:#666; text-decoration:none; font-weight:bold;">← BACK</a>
 
     <h1>
-        <span class="lang ua">Замовлення шоу</span>
-        <span class="lang en">Booking Form</span>
-        <span class="lang es">Formulario de reserva</span>
-        <span class="lang de">Buchungsformular</span>
-        <span class="lang fr">Formulaire de réservation</span>
-        <span class="lang ar" dir="rtl">نموذج الحجز</span>
-        <span class="lang zh">预订表格</span>
-        <span class="lang ja">予約フォーム</span>
+        <span class="lang ua">Замовлення шоу</span><span class="lang en">Booking Form</span><span class="lang es">Formulario</span><span class="lang de">Buchung</span><span class="lang fr">Réservation</span><span class="lang ar">نموذج الحجز</span><span class="lang zh">预订表格</span><span class="lang ja">予約フォーム</span>
     </h1>
 
     <div class="terms-box">
-        <div class="lang ua"><b>Умови:</b> Заявки мінімум за 30 днів. Спеціальні побажання оплачуються додатково. Візи та логістика — за рахунок замовника.</div>
-        <div class="lang en"><b>Terms:</b> Booking min. 30 days in advance. Special requests cost extra. Visas & logistics covered by client.</div>
-        <div class="lang es"><b>Condiciones:</b> Mínimo 30 días de antelación. Pedidos especiales tienen coste extra. Visas y logística a cargo del cliente.</div>
-        <div class="lang de"><b>Bedingungen:</b> Buchung mind. 30 Tage im Voraus. Sonderwünsche kosten extra. Visa & Logistik trägt der Kunde.</div>
-        <div class="lang fr"><b>Conditions:</b> Réservation min. 30 jours à l'avance. Demandes spéciales en supplément. Visas et logistique à la charge du client.</div>
-        <div class="lang ar" dir="rtl"><b>الشروط:</b> الحجز قبل 30 يومًا على الأقل. الطلبات الخاصة لها تكلفة إضافية. التأشيرات والخدمات اللوجستية على حساب العميل.</div>
-        <div class="lang zh"><b>条款：</b> 请至少提前30天预订。 特殊要求需额外付费。 签证和物流费用由客户承担。</div>
-        <div class="lang ja"><b>条件：</b> 最低30日前までの予約が必要です。特別な要望は別途費用がかかります。ビザと物流はクライアントの負担となります。</div>
+        <div class="lang ua"><b>Умови:</b> Заявки за 30 днів. Спеціальні побажання — доплата. Візи та логістика за рахунок замовника.</div>
+        <div class="lang en"><b>Terms:</b> Min 30 days notice. Special requests extra. Visas/logistics by client.</div>
+        <div class="lang es"><b>Condiciones:</b> 30 días de antelación. Extras se pagan aparte. Visas a cargo del cliente.</div>
+        <div class="lang de"><b>Bedingungen:</b> 30 Tage Vorlauf. Sonderwünsche kosten extra. Visa trägt der Kunde.</div>
+        <div class="lang fr"><b>Conditions:</b> 30 jours à l'avance. Frais supp. pour demandes spéciales. Visas par le client.</div>
+        <div class="lang ar"><b>الشروط:</b> الحجز قبل 30 يومًا. الطلبات الخاصة لها تكلفة. التأشيرات على العميل.</div>
+        <div class="lang zh"><b>条款：</b> 需提前30天。特殊要求需额外费用。签证由客户承担。</div>
+        <div class="lang ja"><b>条件：</b> 30日前までの予約。特別な要望は追加料金。ビザは自己負担。</div>
     </div>
 
     <div class="booking-card">
         <form id="bookingForm">
             <div class="form-group">
-                <label class="lang ua">Країна проведення</label>
-                <label class="lang en">Event Country</label>
-                <label class="lang es">País</label>
-                <label class="lang de">Land</label>
-                <label class="lang fr">Pays</label>
-                <label class="lang ar" dir="rtl">الدولة</label>
-                <label class="lang zh">国家</label>
-                <label class="lang ja">開催国</label>
-                <input type="text" id="country" required placeholder="...">
+                <label>
+                    <span class="lang ua">Країна проведення</span><span class="lang en">Country</span><span class="lang es">País</span><span class="lang de">Land</span><span class="lang fr">Pays</span><span class="lang ar">الدولة</span><span class="lang zh">国家</span><span class="lang ja">国</span>
+                </label>
+                <input type="text" id="country" required>
             </div>
 
             <div class="form-group">
-                <label class="lang ua">Дата та час</label>
-                <label class="lang en">Date & Time</label>
-                <label class="lang ar" dir="rtl">التاريخ والوقت</label>
+                <label>
+                    <span class="lang ua">Дата та час</span><span class="lang en">Date & Time</span><span class="lang es">Fecha</span><span class="lang de">Datum</span><span class="lang fr">Date</span><span class="lang ar">التاريخ</span><span class="lang zh">日期</span><span class="lang ja">日時</span>
+                </label>
                 <input type="datetime-local" id="datetime" required>
             </div>
 
             <div class="form-group">
-                <label class="lang ua">Тривалість (Макс. 90 хв)</label>
-                <label class="lang en">Duration (Max 90 min)</label>
-                <label class="lang es">Duración (Máx. 90 min)</label>
+                <label>
+                    <span class="lang ua">Тривалість (Макс 90 хв)</span><span class="lang en">Duration (Max 90m)</span><span class="lang es">Duración</span><span class="lang de">Dauer</span><span class="lang fr">Durée</span><span class="lang ar">المدة</span><span class="lang zh">时长</span><span class="lang ja">期間</span>
+                </label>
                 <select id="duration">
-                    <option value="15 min">15 min</option>
-                    <option value="30 min">30 min</option>
-                    <option value="45 min">45 min</option>
-                    <option value="60 min">60 min</option>
-                    <option value="90 min">90 min</option>
+                    <option value="15 min">15 min</option><option value="30 min">30 min</option><option value="45 min">45 min</option><option value="60 min">60 min</option><option value="90 min">90 min</option>
                 </select>
             </div>
 
             <div class="form-group">
-                <label class="lang ua">Тип заходу</label>
-                <label class="lang en">Event Type</label>
+                <label>
+                    <span class="lang ua">Тип заходу</span><span class="lang en">Event Type</span><span class="lang es">Evento</span><span class="lang de">Event-Typ</span><span class="lang fr">Type d'événement</span><span class="lang ar">نوع الحدث</span><span class="lang zh">活动类型</span><span class="lang ja">イベント種別</span>
+                </label>
                 <select id="eventType">
-                    <option value="Festival">Festival / Фестиваль</option>
-                    <option value="Corporate">Corporate / Корпоратив</option>
-                    <option value="Wedding">Wedding / Весілля</option>
-                    <option value="Birthday">Birthday / День народження</option>
-                    <option value="Concert">Concert / Концерт</option>
-                    <option value="Other">Other / Інше</option>
+                    <option value="Festival">Festival</option><option value="Corporate">Corporate</option><option value="Wedding">Wedding</option><option value="Club">Club Show</option><option value="Other">Other</option>
                 </select>
             </div>
 
             <div class="form-group">
-                <label class="lang ua">Що саме потрібно? (DJ, Show...)</label>
-                <label class="lang en">What is required? (DJ, Show...)</label>
-                <input type="text" id="services">
+                <label>
+                    <span class="lang ua">Що саме потрібно?</span><span class="lang en">What is required?</span><span class="lang es">¿Qué necesitas?</span><span class="lang de">Was wird benötigt?</span><span class="lang fr">Besoins?</span><span class="lang ar">ما المطلوب؟</span><span class="lang zh">需要什么？</span><span class="lang ja">何が必要ですか？</span>
+                </label>
+                <input type="text" id="services" placeholder="DJ, Show, Pole Dance...">
             </div>
 
             <div class="form-group">
-                <label class="lang ua">WhatsApp / Telegram / Email</label>
-                <label class="lang en">WhatsApp / Telegram / Email</label>
-                <input type="text" id="contacts" required placeholder="...">
+                <label>
+                    <span class="lang ua">Бюджет ($)</span><span class="lang en">Budget ($)</span><span class="lang es">Presupuesto</span><span class="lang de">Budget</span><span class="lang fr">Budget</span><span class="lang ar">الميزانية</span><span class="lang zh">预算</span><span class="lang ja">予算</span>
+                </label>
+                <input type="text" id="budget">
             </div>
 
             <div class="form-group">
-                <label class="lang ua">Особливі побажання</label>
-                <label class="lang en">Special Requests</label>
+                <label>
+                    <span class="lang ua">WhatsApp / Telegram / Email</span><span class="lang en">Contacts</span><span class="lang es">Contacto</span><span class="lang de">Kontakt</span><span class="lang fr">Contact</span><span class="lang ar">اتصال</span><span class="lang zh">联系方式</span><span class="lang ja">連絡先</span>
+                </label>
+                <input type="text" id="contacts" required>
+            </div>
+
+            <div class="form-group">
+                <label>
+                    <span class="lang ua">Особливі побажання</span><span class="lang en">Special Requests</span><span class="lang es">Deseos especiales</span><span class="lang de">Sonderwünsche</span><span class="lang fr">Demandes spéciales</span><span class="lang ar">طلبات خاصة</span><span class="lang zh">特殊要求</span><span class="lang ja">特別な要望</span>
+                </label>
                 <textarea id="special" rows="3"></textarea>
             </div>
 
             <button type="submit" class="btn-submit">
-                <span class="lang ua">Надіслати</span>
-                <span class="lang en">Submit</span>
-                <span class="lang es">Enviar</span>
-                <span class="lang de">Senden</span>
-                <span class="lang fr">Envoyer</span>
-                <span class="lang ar" dir="rtl">إرسال</span>
-                <span class="lang zh">提交</span>
-                <span class="lang ja">送信</span>
+                <span class="lang ua">Надіслати</span><span class="lang en">Submit</span><span class="lang es">Enviar</span><span class="lang de">Senden</span><span class="lang fr">Envoyer</span><span class="lang ar">إرسال</span><span class="lang zh">提交</span><span class="lang ja">送信</span>
             </button>
-
-            <div id="successMessage" class="success-msg">
-                <span class="lang ua">✅ Надіслано! Ми зв'яжемося з вами.</span>
-                <span class="lang en">✅ Sent! We will contact you.</span>
-            </div>
+            <div id="successMessage" class="success-msg">✅ SENT / НАДІСЛАНО</div>
         </form>
+    </div>
+
+    <div class="info-section">
+        <div class="info-box">
+            <h3 class="lang ua">Прайс</h3><h3 class="lang en">Price</h3><h3 class="lang es">Precio</h3><h3 class="lang de">Preis</h3>
+            <p>DJ: $200+ | Show: $500+</p>
+        </div>
+        <div class="info-box">
+            <h3 class="lang ua">Стилі</h3><h3 class="lang en">Styles</h3><h3 class="lang es">Estilos</h3><h3 class="lang de">Stile</h3>
+            <p>House, Techno, EDM</p>
+        </div>
+    </div>
+
+    <div class="video-container">
+        <iframe width="100%" height="100%" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allowfullscreen></iframe>
     </div>
 </div>
 
@@ -167,32 +138,16 @@
     function updateLanguage() {
         const lang = localStorage.getItem('language') || 'ua';
         document.querySelectorAll('.lang').forEach(el => {
-            el.style.display = el.classList.contains(lang) ? 'block' : 'none';
+            el.style.display = el.classList.contains(lang) ? 'inline' : 'none';
         });
     }
-
     window.addEventListener('DOMContentLoaded', updateLanguage);
 
     document.getElementById('bookingForm').addEventListener('submit', function(e) {
         e.preventDefault();
-        const message = `
-🌟 **BOOKING REQUEST**
-🌍 Country: ${document.getElementById('country').value}
-📅 Time: ${document.getElementById('datetime').value}
-⏳ Duration: ${document.getElementById('duration').value}
-🎉 Event: ${document.getElementById('eventType').value}
-🎭 Wants: ${document.getElementById('services').value}
-📝 Special: ${document.getElementById('special').value}
-📞 Contacts: ${document.getElementById('contacts').value}
-        `;
-
-        fetch(`https://api.telegram.org/bot${token}/sendMessage?chat_id=${chatId}&text=${encodeURIComponent(message)}&parse_mode=Markdown`)
-        .then(res => {
-            if(res.ok) {
-                document.getElementById('successMessage').style.display = 'block';
-                document.getElementById('bookingForm').reset();
-            }
-        });
+        const msg = `🌟 BOOKING\nCountry: ${document.getElementById('country').value}\nDate: ${document.getElementById('datetime').value}\nDur: ${document.getElementById('duration').value}\nEvent: ${document.getElementById('eventType').value}\nNeeds: ${document.getElementById('services').value}\nBudget: ${document.getElementById('budget').value}\nContact: ${document.getElementById('contacts').value}\nSpecial: ${document.getElementById('special').value}`;
+        fetch(`https://api.telegram.org/bot${token}/sendMessage?chat_id=${chatId}&text=${encodeURIComponent(msg)}`)
+        .then(() => { document.getElementById('successMessage').style.display='block'; document.getElementById('bookingForm').reset(); });
     });
 </script>
 </body>
