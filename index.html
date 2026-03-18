@@ -6,8 +6,8 @@
 <title>ASTORUN.LIVE | Music & Events Label</title>
 
 <link rel="icon" type="image/png" href="111.png">
-
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&display=swap" rel="stylesheet">
+
 <style>
 body { margin:0; font-family:Arial,sans-serif; background:#111; color:#fff; scroll-behavior:smooth; }
 header { position:relative; height:100vh; overflow:hidden; }
@@ -18,50 +18,32 @@ header { position:relative; height:100vh; overflow:hidden; }
 .slide:nth-child(3){background-image:url('https://i.postimg.cc/B6ZJRVM6/YX3ev-7jk-Kmix-b7i-KC4s-Vzu28w-MTa-I7-Cya-Utr-Cd-No-Haf-EB-2-KJGS-x-Hwcyy-Gkqrx-Mc-1.jpg'); animation-delay:10s;}
 @keyframes fade {0%,33%{opacity:1;}34%,100%{opacity:0;}}
 
-/* --- 🔹 ХЕДЕР & ТЕКСТ --- */
+/* ПАНЕЛЬ МОВ */
+.lang-panel { position:fixed; top:15px; left:10px; right:10px; z-index:1000; display:flex; justify-content:center; gap:4px; max-width: 400px; margin: 0 auto; }
+.btn-lang { background: #c00; color: #fff; border: 1px solid rgba(255,255,255,0.4); padding: 6px 0; font-weight: bold; cursor: pointer; border-radius: 4px; font-size: 10px; flex: 1; text-align: center; transition: 0.2s; }
+.btn-lang:hover { background: #fff; color: #c00; }
+
 .hero-text { position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); text-align:center; background:rgba(0,0,0,0.85); padding:25px 30px; border-radius:10px; width: 85%; max-width: 600px; z-index: 10;}
 .hero-text h1 { font-family:'Oswald',sans-serif; font-size:3em; color:#c00; margin:0 0 10px 0; text-transform: uppercase; }
 .hero-text p { font-family:'Oswald',sans-serif; font-size:1.4em; color:#fff; margin:0 0 15px 0; }
 
-/* --- 🔹 ПАНЕЛЬ МОВ (Один ряд зверху) --- */
-.lang-panel { position:fixed; top:15px; left:10px; right:10px; z-index:1000; display:flex; justify-content:center; gap:4px; max-width: 320px; margin: 0 auto; }
-.btn-lang { background: #c00; color: #fff; border: 1px solid rgba(255,255,255,0.4); padding: 5px 0; font-weight: bold; cursor: pointer; border-radius: 4px; font-size: 10px; flex: 1; text-align: center; transition: 0.2s; }
-.btn-lang:hover { background: #fff; color: #c00; }
-
-/* --- 🔹 ЗАГАЛЬНІ СТИЛІ СЕКЦІЙ --- */
 section { padding: 40px 20px; max-width:900px; margin:auto; opacity:0; transform:translateY(30px); transition:1s ease-out; }
 h2 { font-family:'Oswald',sans-serif; color:#c00; text-align:center; margin-bottom:30px; text-transform: uppercase; letter-spacing: 2px; }
-.fade-in { opacity: 1; transform: translateY(0); } /* Для тих сецій, що відразу видно */
 
-/* Основна кнопка (Надіслати заявку) */
-.btn { display:inline-block; padding:12px 20px; background:#c00; color:#fff; text-decoration:none; font-weight:bold; border-radius:5px; margin:10px 0; transition:0.3s; text-transform: uppercase; font-size: 0.9em; border:none; cursor:pointer; width: 100%; box-sizing: border-box;}
-.btn:hover { background:#900; transform: scale(1.02); }
+/* Кнопки контактів в один ряд */
+.contacts-row { display: flex; justify-content: center; gap: 8px; width: 100%; margin-top: 20px; }
+.btn-contact { flex: 1; max-width: 150px; background: #c00; color: #fff; text-decoration: none; padding: 12px 0; font-weight: bold; border-radius: 4px; font-size: 11px; text-align: center; text-transform: uppercase; transition: 0.2s; border: 1px solid rgba(255,255,255,0.2); }
+.btn-contact:hover { background: #900; transform: scale(1.05); }
 
-/* --- 🔹 КОНТАКТИ (Ряд на мобільному) --- */
-.contacts-row { display: flex; justify-content: space-between; gap: 8px; max-width: 500px; margin: 20px auto 0 auto; width: 100%; }
-.btn-contact { flex: 1; display: inline-flex; align-items: center; justify-content: center; background: #c00; color: #fff; text-decoration: none; padding: 10px 0; font-weight: bold; border-radius: 4px; font-size: 11px; text-transform: uppercase; text-align: center; transition: 0.2s; border: 1px solid rgba(255,255,255,0.2); }
-.btn-contact:hover { background: #900; }
+.btn-main { display:inline-block; padding:12px 25px; background:#c00; color:#fff; text-decoration:none; font-weight:bold; border-radius:5px; transition:0.3s; text-transform: uppercase; border:none; cursor:pointer; margin-top: 10px; }
 
-/* --- 🔹 ІНШІ СТИЛІ --- */
-.service-list { list-style: none; padding: 0; }
-.service-list li { margin-bottom: 15px; border-left: 3px solid #c00; padding-left: 15px; }
 footer { text-align:center; padding:40px 20px; background:#000; color:#aaa; border-top: 1px solid #222; }
 .lang { display:none; }
 
-/* --- 🔹 АДАПТИВНІСТЬ ДЛЯ МОБІЛЬНИХ --- */
 @media (max-width:768px){
-.hero-text h1 { font-size:2.2em; }
-.hero-text p { font-size:1em; }
-section { padding:30px 15px; }
-iframe { height:180px; }
-.lang-panel { gap: 2px; top: 10px; }
-.btn-lang { font-size: 9px; padding: 4px 0; }
-.btn-contact { font-size: 10px; padding: 9px 0; gap: 4px; }
-}
-
-@media (max-width:360px){
-.btn-lang { font-size: 8px; }
-.btn-contact { font-size: 9px; }
+    .hero-text h1 { font-size:2.2em; }
+    iframe { height:180px; }
+    .btn-lang { font-size: 9px; }
 }
 </style>
 </head>
@@ -79,98 +61,85 @@ iframe { height:180px; }
 </div>
 
 <header>
-<div class="slide"></div>
-<div class="slide"></div>
-<div class="slide"></div>
-<div class="hero-text">
-    <h1 class="lang ua en es de fr ar zh ja">ASTORUN.LIVE</h1>
-    <p class="lang ua">Музика. Шоу. Енергія. Ми керуємо атмосферою.</p>
-    <p class="lang en">Music. Show. Energy. We control the vibe.</p>
-    <p class="lang es">Música. Show. Energía. Controlamos la vibra.</p>
-    <p class="lang de">Musik. Show. Energie. Wir kontrollieren den Vibe.</p>
-    <p class="lang fr">Musique. Spectacle. Énergie. Nous maîtrisons l'ambiance.</p>
-    <p class="lang ar" dir="rtl">موسيقى. عرض. طاقة. نحن نتحكم في الجو.</p>
-    <p class="lang zh">音乐。表演。能量。我们掌控氛围。</p>
-    <p class="lang ja">音楽。ショー。エネルギー。私たちがバイブスを操る。</p>
-    
-    <a href="#contacts" class="btn lang ua" style="width:auto; display:inline-block; padding: 12px 25px;">Зв’язатися</a>
-    <a href="#contacts" class="btn lang en" style="width:auto; display:inline-block; padding: 12px 25px;">Contact Us</a>
-    <a href="#contacts" class="btn lang es" style="width:auto; display:inline-block; padding: 12px 25px;">Contactar</a>
-    <a href="#contacts" class="btn lang de" style="width:auto; display:inline-block; padding: 12px 25px;">Kontakt</a>
-    <a href="#contacts" class="btn lang fr" style="width:auto; display:inline-block; padding: 12px 25px;">Contactez-nous</a>
-    <a href="#contacts" class="btn lang ar" style="width:auto; display:inline-block; padding: 12px 25px;">اتصل بنا</a>
-    <a href="#contacts" class="btn lang zh" style="width:auto; display:inline-block; padding: 12px 25px;">联系我们</a>
-    <a href="#contacts" class="btn lang ja" style="width:auto; display:inline-block; padding: 12px 25px;">お問い合わせ</a>
-</div>
+    <div class="slide"></div><div class="slide"></div><div class="slide"></div>
+    <div class="hero-text">
+        <h1 style="color:#c00;">ASTORUN.LIVE</h1>
+        <p class="lang ua">Музика. Шоу. Енергія. Ми керуємо атмосферою.</p>
+        <p class="lang en">Music. Show. Energy. We control the vibe.</p>
+        <p class="lang es">Música. Espectáculo. Energía. Controlamos el ambiente.</p>
+        <p class="lang de fr ar zh ja">Music. Show. Energy. We control the vibe.</p>
+        
+        <a href="#contacts" class="btn-main lang ua">Зв’язатися</a>
+        <a href="#contacts" class="btn-main lang en es de fr ar zh ja">Contact Us</a>
+    </div>
 </header>
 
 <section id="astorun" class="fade-in">
-<h2 class="lang ua">Еволюція ASTORUN</h2>
-<h2 class="lang en">Evolution of ASTORUN</h2>
-<div style="display:flex; align-items:center; gap:20px; flex-wrap:wrap; justify-content:center;">
-  <div style="flex:1; min-width:180px;">
-    <img src="https://i.ibb.co/cSGgq3Wd/Chat-GPT-Image-21-2025-09-04-55.png" alt="Astorun Logo" style="width:100%; height:auto; border-radius:5px;">
-  </div>
-  <div style="flex:2; min-width:250px;">
-    <div class="lang ua">
-      <strong>Event Label & Production Studio.</strong><br><br>
-      Історія почалася у 2009 році в Білій Церкві. Сьогодні ASTORUN — це міжнародний простір, де музика та шоу об’єднуються в єдину енергію. Ми віримо: той, хто створює звук, керує подією.
+    <h2 class="lang ua">Про ASTORUN</h2>
+    <h2 class="lang en es de fr ar zh ja">About ASTORUN</h2>
+    <div style="display:flex; align-items:center; gap:20px; flex-wrap:wrap; justify-content:center;">
+      <div style="flex:1; min-width:180px;"><img src="https://i.ibb.co/cSGgq3Wd/Chat-GPT-Image-21-2025-09-04-55.png" style="width:100%; border-radius:5px;"></div>
+      <div style="flex:2; min-width:250px;">
+        <p class="lang ua"><strong>Міжнародний простір ASTORUN.</strong><br><br>Історія почалася у 2009 році. Сьогодні це простір індивідуальності, музики та творчості. Ми віримо, що музика керує подією.</p>
+        <p class="lang en es de fr ar zh ja"><strong>ASTORUN International Space.</strong><br><br>Founded in 2009, ASTORUN is a global space for individuality, music, and creativity. We believe that music controls the event.</p>
+      </div>
     </div>
-    <div class="lang en">
-      <strong>Event Label & Production Studio.</strong><br><br>
-      The story began in 2009. Today ASTORUN is an international hub where music and show merge into a single energy. We believe: the one who creates the sound controls the event.
+</section>
+
+<section id="about" class="fade-in">
+    <h2 class="lang ua">Про мене: AKZET</h2>
+    <h2 class="lang en es de fr ar zh ja">About Me: AKZET</h2>
+    <div style="display:flex; align-items:center; gap:20px; flex-wrap:wrap; justify-content:center;">
+      <div style="flex:2; min-width:220px;">
+        <p class="lang ua">Привіт, я AK3ET. Мій шлях у музиці (Tech House, House, EDM) — це створення енергії, де кожен біт резонує з вашим внутрішнім станом. Моя музика — це ритм вільного простору.</p>
+        <p class="lang en es de fr ar zh ja">Hello, I am AKZET. My journey in music (Tech House, House, EDM) is about creating energy where every beat resonates with your inner state. My music is the rhythm of a free space.</p>
+      </div>
+      <div style="flex:1; min-width:180px;"><img src="https://i.ibb.co/YF0Np0Kz/WHv2-Xgx-F1763869099.png" style="width:100%; border-radius:5px;"></div>
     </div>
-  </div>
-</div>
 </section>
 
 <section id="music" class="fade-in">
-<h2 class="lang ua">Музика та Шоу</h2>
-<h2 class="lang en">Music & Show</h2>
-
-<iframe style="border-radius:12px; margin-bottom:10px; border:none;" src="https://open.spotify.com/embed/album/3oUbUtzJ7wfPNEJ3HlE27T?utm_source=generator" width="100%" height="152" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-<iframe style="border-radius:12px; margin-bottom:10px; border:none;" src="https://open.spotify.com/embed/album/5rh4nf54GwrTLupAl6QkX5?utm_source=generator" width="100%" height="152" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-<iframe style="border-radius:12px; margin-bottom:10px; border:none;" src="https://open.spotify.com/embed/album/0u0SYKZFNzIhKI33OnQrmD?utm_source=generator" width="100%" height="152" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-
-<div style="position:relative; padding-bottom:56.25%; height:0; overflow:hidden; max-width:100%; border-radius:10px; margin-top:20px;">
-    <iframe src="https://www.youtube.com/embed/ELBYTlDsGOU?si=2HE8pGjgdvdSmjGQ" title="YouTube video" frameborder="0" allowfullscreen style="position:absolute; top:0; left:0; width:100%; height:100%;"></iframe>
-</div>
+    <h2 class="lang ua">Музика та Шоу</h2>
+    <h2 class="lang en es de fr ar zh ja">Music & Show</h2>
+    <iframe style="border-radius:12px; margin-bottom:10px; border:none;" src="https://open.spotify.com/embed/track/3Z6uW0Jp6O66S1kO6O66S1" width="100%" height="152" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+    <div style="position:relative; padding-bottom:56.25%; height:0; overflow:hidden; border-radius:10px; margin-top:20px;">
+        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" style="position:absolute; top:0; left:0; width:100%; height:100%; border:none;" allowfullscreen></iframe>
+    </div>
 </section>
 
 <section id="talents" class="fade-in" style="background: rgba(204,0,0,0.1); border: 1px dashed #c00; border-radius: 10px; text-align: center;">
-<h2 class="lang ua">Шукаємо таланти</h2>
-<h2 class="lang en">Join the Label</h2>
-<p class="lang ua">Ти DJ, танцівник чи фотограф? Ми шукаємо унікальну енергію. Надсилай своє портфоліо!</p>
-<p class="lang en">Are you a DJ, dancer, or photographer? We are looking for unique energy. Send your portfolio!</p>
-<a href="https://t.me/dunabuda" class="btn lang ua">Надіслати заявку</a>
-<a href="https://t.me/dunabuda" class="btn lang en">Apply Now</a>
+    <h2 class="lang ua">Шукаємо таланти</h2>
+    <h2 class="lang en es de fr ar zh ja">Talent Search</h2>
+    <p class="lang ua">Ти DJ, танцівник чи фотограф? Ми шукаємо унікальну енергію. Натискай на кнопку!</p>
+    <p class="lang en es de fr ar zh ja">Are you a DJ, dancer, or photographer? We are looking for unique talent. Join us!</p>
+    <a href="https://t.me/dunabuda" class="btn-main">Apply Now / Подати заявку</a>
 </section>
 
 <section id="contacts" class="fade-in">
-<h2 class="lang ua">Контакти</h2>
-<h2 class="lang en">Contacts</h2>
-
-<div class="contacts-row">
-    <a class="btn-contact" href="https://instagram.com/astorun" target="_blank">INSTAGRAM</a>
-    <a class="btn-contact" href="https://t.me/dunabuda" target="_blank">TELEGRAM</a>
-    <a class="btn-contact" href="mailto:akzet.music@gmail.com">EMAIL</a>
-</div>
+    <h2 class="lang ua">Контакти</h2>
+    <h2 class="lang en es de fr ar zh ja">Contacts</h2>
+    <div class="contacts-row">
+        <a class="btn-contact" href="https://instagram.com/astorun" target="_blank">Instagram</a>
+        <a class="btn-contact" href="https://t.me/dunabuda" target="_blank">Telegram</a>
+        <a class="btn-contact" href="mailto:akzet.music@gmail.com">Email</a>
+    </div>
 </section>
 
 <footer>
-<p class="lang ua">© 2009-2026 ASTORUN.LIVE. Всі права захищено.</p>
-<p class="lang en">© 2009-2026 ASTORUN.LIVE. All rights reserved.</p>
+    <p>© 2009-2026 ASTORUN.LIVE</p>
 </footer>
 
 <script>
 function setLanguage(lang){
   localStorage.setItem('language', lang);
-  document.querySelectorAll('.lang').forEach(el=>{
-    // Спеціальна логіка для заголовків, які є спільними для всіх мов
-    if(el.classList.contains('ua') && el.classList.contains('en') && el.classList.contains('ja')) {
+  const allLangs = ['ua', 'en', 'es', 'de', 'fr', 'ar', 'zh', 'ja'];
+  
+  document.querySelectorAll('.lang').forEach(el => {
+    // Якщо елемент має клас поточної мови, показуємо його
+    if (el.classList.contains(lang)) {
         el.style.display = 'block';
     } else {
-        el.style.display = el.classList.contains(lang)? 'block':'none';
+        el.style.display = 'none';
     }
   });
 }
@@ -181,7 +150,7 @@ window.addEventListener('DOMContentLoaded', () => setLanguage(savedLanguage));
 function fadeInOnScroll() {
   document.querySelectorAll('.fade-in').forEach(el=>{
     const rect = el.getBoundingClientRect();
-    if(rect.top < window.innerHeight - 100){
+    if(rect.top < window.innerHeight - 50){
       el.style.opacity = 1;
       el.style.transform = 'translateY(0)';
     }
