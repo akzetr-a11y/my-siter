@@ -1,43 +1,55 @@
 <!DOCTYPE html>
 <html lang="uk">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ASTORUN.LIVE | AKZET</title>
-<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&display=swap" rel="stylesheet">
-<style>
-    body { margin:0; font-family:Arial,sans-serif; background:#111; color:#fff; scroll-behavior:smooth; -webkit-font-smoothing: antialiased; }
-    header { position:relative; height:100vh; overflow:hidden; display: flex; align-items: center; justify-content: center; }
-    .slide { position:absolute; width:100%; height:100%; background-size:cover; background-position:center; opacity:0; animation:fade 15s infinite; z-index: -1; }
-    .slide::before { content:""; position:absolute; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.6); }
-    .slide:nth-child(1){background-image:url('https://i.postimg.cc/Mpj4Kmvc/Tg5-X-j-F7-LBIcjxo-SZvaad-La-Ju-XA32-GAKGjm-H9p-Si-Pvg-VMFny-Yxb-IF-x5-Pr-PQ12-QQ-q-KQ7q-L8w-HGYz-Lw9v-An-Rc8.jpg'); animation-delay:0s;}
-    .slide:nth-child(2){background-image:url('https://i.postimg.cc/TPXq6rzm/xm-JBCl-SFEcy-SXHx1-SSXPY9j7v-04cx-Rpzz-NPFYkbq-L4-HL7-W8i3-Jnlow-LUn-EZ95-GQz-Wjd-XQ.jpg'); animation-delay:5s;}
-    .slide:nth-child(3){background-image:url('https://i.postimg.cc/B6ZJRVM6/YX3ev-7jk-Kmix-b7i-KC4s-Vzu28w-MTa-I7-Cya-Utr-Cd-No-Haf-EB-2-KJGS-x-Hwcyy-Gkqrx-Mc-1.jpg'); animation-delay:10s;}
-    @keyframes fade {0%,33%{opacity:1;}34%,100%{opacity:0;}}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>ASTORUN.LIVE | AKZET</title>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body { margin:0; font-family: 'Segoe UI', Arial, sans-serif; background:#0a0a0a; color:#fff; scroll-behavior:smooth; overflow-x: hidden; }
+        
+        /* СЛАЙДЕР */
+        header { position:relative; height:100vh; width: 100%; display: flex; align-items: center; justify-content: center; }
+        .slide { position:absolute; width:100%; height:100%; background-size:cover; background-position:center; opacity:0; animation:fade 15s infinite; z-index: -1; }
+        .slide::before { content:""; position:absolute; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.7); }
+        .slide:nth-child(1){background-image:url('https://i.postimg.cc/Mpj4Kmvc/Tg5-X-j-F7-LBIcjxo-SZvaad-La-Ju-XA32-GAKGjm-H9p-Si-Pvg-VMFny-Yxb-IF-x5-Pr-PQ12-QQ-q-KQ7q-L8w-HGYz-Lw9v-An-Rc8.jpg'); animation-delay:0s;}
+        .slide:nth-child(2){background-image:url('https://i.postimg.cc/TPXq6rzm/xm-JBCl-SFEcy-SXHx1-SSXPY9j7v-04cx-Rpzz-NPFYkbq-L4-HL7-W8i3-Jnlow-LUn-EZ95-GQz-Wjd-XQ.jpg'); animation-delay:5s;}
+        .slide:nth-child(3){background-image:url('https://i.postimg.cc/B6ZJRVM6/YX3ev-7jk-Kmix-b7i-KC4s-Vzu28w-MTa-I7-Cya-Utr-Cd-No-Haf-EB-2-KJGS-x-Hwcyy-Gkqrx-Mc-1.jpg'); animation-delay:10s;}
+        @keyframes fade {0%,33%{opacity:1;}34%,100%{opacity:0;}}
 
-    .lang-panel { position:fixed; top:10px; left:0; right:0; z-index:2000; display:flex; justify-content:center; gap:2px; padding: 0 5px; flex-wrap: wrap; }
-    .btn-lang { background: #c00; color: #fff; border: 1px solid rgba(255,255,255,0.3); padding: 8px 0; font-weight: bold; cursor: pointer; border-radius: 4px; font-size: 10px; flex: 1; min-width: 40px; max-width: 45px; }
-    .btn-lang.active { background: #fff; color: #c00; }
+        /* МОВНА ПАНЕЛЬ - ВИПРАВЛЕНО НАКЛАДАННЯ */
+        .lang-panel { position:fixed; top:10px; left:0; right:0; z-index:9999; display:flex; justify-content:center; gap:4px; padding: 5px; background: rgba(0,0,0,0.5); backdrop-filter: blur(5px); }
+        .btn-lang { background: #c00; color: #fff; border: 1px solid rgba(255,255,255,0.2); padding: 8px 0; font-weight: bold; cursor: pointer; border-radius: 4px; font-size: 11px; width: 42px; transition: 0.3s; }
+        .btn-lang.active { background: #fff !important; color: #c00 !important; border-color: #fff; }
 
-    .hero-text { text-align:center; background:rgba(0,0,0,0.8); padding:20px; border-radius:10px; width: 90%; max-width: 500px; z-index: 10; }
-    .hero-text h1 { font-family:'Oswald',sans-serif; font-size:2.5em; color:#c00; margin:0; text-transform: uppercase; }
+        /* ГОЛОВНИЙ БЛОК */
+        .hero-text { text-align:center; background:rgba(0,0,0,0.85); padding:30px 20px; border-radius:15px; width: 85%; max-width: 450px; border: 1px solid #333; }
+        .hero-text h1 { font-family:'Oswald',sans-serif; font-size:2.8em; color:#c00; margin:0 0 10px 0; letter-spacing: 2px; }
+        .hero-text p { font-size: 1.1em; margin-bottom: 25px; min-height: 1.5em; }
 
-    section { padding: 40px 20px; max-width:800px; margin:auto; }
-    h2 { font-family:'Oswald',sans-serif; color:#c00; text-align:center; text-transform: uppercase; margin-bottom: 25px; }
+        /* СЕКЦІЇ */
+        section { padding: 60px 20px; max-width: 800px; margin: auto; position: relative; }
+        h2 { font-family:'Oswald',sans-serif; color:#c00; text-align:center; text-transform: uppercase; font-size: 2em; margin-bottom: 30px; }
 
-    .spotify-container { display: flex; flex-direction: column; gap: 15px; margin-bottom: 30px; width: 100%; }
-    .spotify-container iframe { border-radius: 12px; border: none; width: 100%; height: 152px; background: transparent; }
+        /* SPOTIFY ТРЕКИ - ВИПРАВЛЕНО ПОСИЛАННЯ */
+        .music-grid { display: flex; flex-direction: column; gap: 20px; margin-bottom: 40px; }
+        .spotify-wrapper { width: 100%; background: #282828; border-radius: 12px; height: 152px; overflow: hidden; }
+        
+        /* КНОПКИ */
+        .btn-main { display: inline-block; padding: 16px 35px; background: #c00; color: #fff !important; text-decoration: none; font-weight: bold; border-radius: 8px; text-transform: uppercase; transition: 0.3s; border: none; font-size: 14px; }
+        .btn-main:hover { transform: scale(1.05); background: #e00; }
 
-    .btn-main { display:block; width: fit-content; margin: 20px auto; padding: 12px 24px; background: #c00; color: #fff !important; text-decoration: none; font-weight: bold; border-radius: 5px; text-transform: uppercase; text-align: center; border: none; }
+        .contacts-row { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; }
+        .btn-contact { background: #1a1a1a; color: #fff !important; text-decoration: none; padding: 15px 0; font-weight: bold; border-radius: 6px; font-size: 11px; text-align: center; text-transform: uppercase; border: 1px solid #333; transition: 0.3s; }
+        .btn-contact:hover { background: #c00; border-color: #c00; }
 
-    .contacts-row { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; margin-top: 20px; }
-    .btn-contact { background: #c00; color: #fff !important; text-decoration: none; padding: 12px 0; font-weight: bold; border-radius: 4px; font-size: 10px; text-align: center; text-transform: uppercase; }
+        /* ЛОГІКА ТЕКСТУ */
+        [data-t] { display: none; }
+        .t-active { display: block !important; }
+        span.t-active { display: inline-block !important; }
 
-    /* Логіка перекладу */
-    [data-t] { display: none; }
-    .visible { display: block !important; }
-    .visible-inline { display: inline-block !important; }
-</style>
+        footer { text-align: center; padding: 40px; color: #444; font-size: 12px; border-top: 1px solid #1a1a1a; }
+    </style>
 </head>
 <body>
 
@@ -64,6 +76,7 @@
         <p data-t="ar" dir="rtl">الموسيقى. العرض. الطاقة. نحن نتحكم في الأجواء.</p>
         <p data-t="zh">音乐。表演。能量。我们掌控氛围。</p>
         <p data-t="ja">音楽。ショー。エネルギー。私たちがバイブスを操る。</p>
+        
         <a href="#contacts" class="btn-main">
             <span data-t="ua">Зв’язатися</span><span data-t="en">Contact</span><span data-t="es">Contacto</span><span data-t="de">Kontakt</span><span data-t="fr">Contact</span><span data-t="ar">اتصل بنا</span><span data-t="zh">联系我们</span><span data-t="ja">連絡先</span>
         </a>
@@ -71,31 +84,30 @@
 </header>
 
 <section id="music">
-    <h2 data-t="ua">Музика та Шоу</h2><h2 data-t="en">Music & Show</h2><h2 data-t="es">Música y Espectáculo</h2><h2 data-t="de">Musik & Show</h2><h2 data-t="fr">Musique & Spectacle</h2><h2 data-t="ar">الموسيقى والعرض</h2><h2 data-t="zh">音乐与表演</h2><h2 data-t="ja">音楽とショー</h2>
+    <h2 data-t="ua">Музика</h2><h2 data-t="en">Music</h2><h2 data-t="es">Música</h2><h2 data-t="de">Musik</h2><h2 data-t="fr">Musique</h2><h2 data-t="ar">موسيقى</h2><h2 data-t="zh">音乐</h2><h2 data-t="ja">音楽</h2>
     
-    <div class="spotify-container">
-        <iframe src="https://open.spotify.com/embed/track/3UbUtzJ7wfPNEJ3HIE27T?utm_source=generator" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-        <iframe src="https://open.spotify.com/embed/track/5h4nf54GwrTLupA16QKX5?utm_source=generator" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-        <iframe src="https://open.spotify.com/embed/track/0uOSYKZFNzIhKI330nQrmD?utm_source=generator" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+    <div class="music-grid">
+        <div class="spotify-wrapper">
+            <iframe src="https://open.spotify.com/embed/track/3UbUtzJ7wfPNEJ3HIE27T?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        </div>
+        <div class="spotify-wrapper">
+            <iframe src="https://open.spotify.com/embed/track/5h4nf54GwrTLupAl6QKX5?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        </div>
+        <div class="spotify-wrapper">
+            <iframe src="https://open.spotify.com/embed/track/0uOSYKZFNzIhKI330nQrmD?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        </div>
     </div>
 
-    <div style="position:relative; padding-bottom:56.25%; height:0; border-radius:10px; overflow:hidden; margin-top: 20px;">
-        <iframe src="https://www.youtube.com/embed/S2pEa7vJ8i0" style="position:absolute; top:0; left:0; width:100%; height:100%; border:none;" allowfullscreen></iframe>
+    <div style="position:relative; padding-bottom:56.25%; height:0; border-radius:12px; overflow:hidden; border: 1px solid #333;">
+        <iframe src="https://www.youtube.com/embed/qV0G0f7HkYc" style="position:absolute; top:0; left:0; width:100%; height:100%; border:none;" allowfullscreen></iframe>
     </div>
 </section>
 
-<section id="talents" style="background: rgba(204,0,0,0.1); border: 1px dashed #c00; border-radius: 10px; text-align: center;">
-    <h2 data-t="ua">Шукаємо таланти</h2><h2 data-t="en">Talent Search</h2><h2 data-t="es">Buscamos talentos</h2><h2 data-t="de">Talentsuche</h2><h2 data-t="fr">Recrutement</h2><h2 data-t="ar">البحث عن المواهب</h2><h2 data-t="zh">人才招聘</h2><h2 data-t="ja">タレント募集</h2>
+<section id="talents" style="background: linear-gradient(145deg, #1a0000, #0a0a0a); border: 1px solid #c00; border-radius: 15px; text-align: center; margin-top: 20px;">
+    <h2 data-t="ua">Шукаємо таланти</h2><h2 data-t="en">Talent Search</h2><h2 data-t="es">Buscamos talentos</h2><h2 data-t="de">Talentsuche</h2><h2 data-t="fr">Recrutement</h2><h2 data-t="ar">البحث عن المواهб</h2><h2 data-t="zh">人才招聘</h2><h2 data-t="ja">タレント募集</h2>
     
-    <p data-t="ua">Ти DJ чи артист? Приєднуйся!</p>
-    <p data-t="en">Are you a DJ or artist? Join us!</p>
-    <p data-t="es">¿Eres DJ o artista? ¡Únete!</p>
-    <p data-t="de">Bist du DJ oder Künstler? Mach mit!</p>
-    <p data-t="fr">Es-tu DJ ou artiste ? Rejoins-nous !</p>
-    <p data-t="ar">هل أنت دي جي أم فنان؟ انضم إلينا!</p>
-    <p data-t="zh">你是DJ还是艺人？加入我们！</p>
-    <p data-t="ja">DJやアーティストですか？参加しませんか！</p>
-
+    <p data-t="ua">Стань частиною ASTORUN</p><p data-t="en">Join ASTORUN crew</p><p data-t="es">Únete a ASTORUN</p><p data-t="de">Werde Teil von ASTORUN</p>
+    
     <a href="https://t.me/dunabuda" class="btn-main">
         <span data-t="ua">Подати заявку</span><span data-t="en">Apply Now</span><span data-t="es">Enviar</span><span data-t="de">Bewerben</span><span data-t="fr">Postuler</span><span data-t="ar">قدّم الآن</span><span data-t="zh">立即申请</span><span data-t="ja">申し込む</span>
     </a>
@@ -110,28 +122,30 @@
 </section>
 
 <footer>
-    <p style="text-align: center; color: #555; padding: 20px;">© 2009-2026 ASTORUN.LIVE</p>
+    <p>© 2009-2026 ASTORUN.LIVE</p>
 </footer>
 
 <script>
     function setLang(l) {
-        localStorage.setItem('lang', l);
-        document.querySelectorAll('[data-t]').forEach(e => {
-            e.classList.remove('visible', 'visible-inline');
-            if(e.getAttribute('data-t') === l) {
-                if (e.tagName === 'SPAN') {
-                    e.classList.add('visible-inline');
-                } else {
-                    e.classList.add('visible');
-                }
+        localStorage.setItem('astorun_lang', l);
+        
+        // Перемикаємо всі тексти
+        document.querySelectorAll('[data-t]').forEach(el => {
+            el.classList.remove('t-active');
+            if(el.getAttribute('data-t') === l) {
+                el.classList.add('t-active');
             }
         });
+
+        // Активна кнопка в панелі
         document.querySelectorAll('.btn-lang').forEach(b => b.classList.remove('active'));
         const activeBtn = document.getElementById('b-' + l);
         if(activeBtn) activeBtn.classList.add('active');
     }
+
+    // Ініціалізація
     window.onload = () => {
-        const saved = localStorage.getItem('lang') || 'ua';
+        const saved = localStorage.getItem('astorun_lang') || 'ua';
         setLang(saved);
     };
 </script>
