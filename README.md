@@ -1,4 +1,14 @@
-ASTO.RUN website v5 — clean archive carousel + refined AKZET label section.
-Archive: 3 photos + 1 YouTube video in one carousel.
-AKZET logo: centered and size-controlled.
-Files are kept in repository root for GitHub Pages.
+# ASTO.RUN — final site
+
+Static GitHub Pages site for ASTO.RUN / ASTORUN.
+
+## Sections
+1. About
+2. Label / AKZET
+3. Projects
+4. Idea Base
+5. Events — interactive calendar, currently showing no planned events
+6. Contact — Facebook, Instagram, Telegram and YouTube
+
+## Deploy
+Upload the contents of this folder to the GitHub Pages repository root. `CNAME` contains `asto.run`.
