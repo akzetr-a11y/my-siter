@@ -1,11 +1,2 @@
-# ASTORUN site
-
-Static responsive website for ASTORUN.
-
-Files:
-- index.html
-- style.css
-- logo.png
-- CNAME
-
-GitHub Pages domain: asto.run
+ASTO.RUN website v2 — ASTORUN history with three historical photos only.
+Deploy: GitHub Pages from main branch, root /. Custom domain: asto.run.
