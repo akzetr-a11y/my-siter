@@ -1,3 +1,4 @@
-ASTO.RUN website v3 — English, clean section hierarchy, three historical photos.
-Important: archive-01.jpg, archive-02.jpg, archive-03.jpg are in the repository root because index.html references them directly.
-Deploy: GitHub Pages from main branch, root /. Custom domain: asto.run.
+ASTO.RUN website v4 — English clean layout + ASTORUN event video + AKZET artist/producer section.
+Files: index.html, style.css, logo.png, akzet-logo.png, archive-01.jpg, archive-02.jpg, archive-03.jpg, CNAME.
+Historical photos and AKZET logo are stored in repository root for simple GitHub Pages deployment.
+YouTube archive video: https://www.youtube.com/watch?v=rBgD0KBpvC0
