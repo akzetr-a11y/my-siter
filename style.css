@@ -1,3 +1,27 @@
+/* ASTORUN HEADER FIX */
+header .nav {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 30px !important;
+}
+
+header nav {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-end !important;
+  gap: 30px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+header nav a {
+  display: inline-block !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  white-space: nowrap !important;
+}
+
 @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,600;0,800;1,800&family=Inter:wght@400;500;600;700;800&display=swap');
 
 :root {
