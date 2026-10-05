@@ -14,8 +14,8 @@ a{color:inherit;text-decoration:none}
 .hero{min-height:calc(100vh - 76px);background:#0b0b0b;color:#fff;position:relative;overflow:hidden;display:flex;align-items:center}
 .hero-noise{position:absolute;inset:0;opacity:.12;background-image:linear-gradient(90deg,transparent 49.8%,#fff 50%,transparent 50.2%),linear-gradient(0deg,transparent 49.8%,#fff 50%,transparent 50.2%);background-size:80px 80px}
 .hero-mark{position:absolute;right:-5vw;top:-10vh;font:900 65vw/1 "Barlow Condensed";color:rgba(230,0,18,.12);transform:skewX(-8deg)}
-.hero-content{position:relative;padding:100px 0 130px}.eyebrow{font-size:11px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;margin:0 0 25px;color:var(--gray)}
-.hero h1,.section-head h2{font-family:"Barlow Condensed",Impact,sans-serif;font-size:clamp(70px,11vw,150px);line-height:.82;letter-spacing:-.045em;margin:0;text-transform:uppercase}
+.hero-content{position:relative;padding:86px 0 105px}.eyebrow{font-size:11px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;margin:0 0 25px;color:var(--gray)}
+.hero h1,.section-head h2{font-family:"Barlow Condensed",Impact,sans-serif;font-size:clamp(64px,8.5vw,118px);line-height:.82;letter-spacing:-.045em;margin:0;text-transform:uppercase}
 .hero h1 span,.section-head h2 span{color:var(--red)}
 .lead{max-width:650px;color:#cfcfcf;font-size:18px;line-height:1.65;margin:35px 0}
 .hero-actions{display:flex;gap:12px;flex-wrap:wrap}.btn{display:inline-flex;align-items:center;gap:18px;background:var(--red);color:#fff;padding:16px 22px;font-size:12px;font-weight:900;letter-spacing:.1em}.btn span{font-size:18px}.btn-ghost{background:transparent;border:1px solid #555}
@@ -35,3 +35,19 @@ a{color:inherit;text-decoration:none}
 footer{background:#050505;color:#777;border-top:1px solid #222}.footer-inner{display:flex;justify-content:space-between;padding:22px 0;font-size:9px;font-weight:800;letter-spacing:.12em}
 @media(max-width:900px){.menu{gap:14px}.menu a{font-size:10px}.feature-grid,.ideas-layout,.contact-grid{grid-template-columns:1fr;gap:45px}.timeline{grid-template-columns:1fr 1fr}.archive-head{align-items:flex-start;flex-direction:column}.photo{grid-column:span 6}.photo-wide{grid-column:span 12}.hero-bottom div:last-child{display:none}}
 @media(max-width:700px){.container{width:min(100% - 28px,1180px)}.nav{min-height:68px}.menu-toggle{display:block}.menu{display:none;position:absolute;top:68px;left:0;right:0;background:#f5f5f3;border-bottom:1px solid #ccc;padding:20px 14px;flex-direction:column;align-items:flex-start}.menu.open{display:flex}.hero{min-height:calc(100svh - 68px)}.hero-content{padding:75px 0 120px}.hero h1{font-size:20vw}.hero-bottom{font-size:8px}.hero-bottom div:nth-child(2){display:none}.section{padding:80px 0}.section-head{margin-bottom:45px}.section-head h2{font-size:20vw}.about-intro{grid-template-columns:1fr;gap:15px}.big-number{font-size:70px}.about-intro .statement{font-size:24px}.timeline{grid-template-columns:1fr;margin:70px 0}.timeline article,.timeline article:not(:first-child){border-right:0;border-bottom:1px solid var(--line);padding:20px 0;min-height:auto}.history-note{grid-template-columns:1fr;gap:15px;padding:25px}.archive-head h2{font-size:18vw}.photo,.photo-wide{grid-column:span 12}.photo img,.photo-wide img{height:auto;aspect-ratio:4/3}.transition h3{font-size:18vw}.feature-main h3{font-size:17vw}.project-grid{grid-template-columns:1fr}.project-grid article{min-height:220px}.ideas-lead{font-size:28px}.event-card{padding:30px;min-height:430px;display:block}.event-card h3{font-size:18vw}.event-symbol{display:none}.contact-email{font-size:16vw}.footer-inner{flex-wrap:wrap;gap:12px}}
+
+.section-kicker{display:flex;align-items:center;gap:16px;font-size:12px;font-weight:900;letter-spacing:.16em;color:#111;border-bottom:2px solid #111;padding-bottom:15px;margin-bottom:58px}
+.section-kicker span{color:var(--red);font-family:"Barlow Condensed";font-size:24px;letter-spacing:0}
+.section-kicker.light{color:#fff;border-color:#333}
+.section-kicker.light span{color:var(--red)}
+.section-head{position:relative}
+.section-head h2{max-width:900px}
+.about,.events,.contact{border-top:1px solid transparent}
+.archive{margin-top:10px}
+.photo-grid{align-items:start}
+.photo{min-width:0}
+@media(max-width:700px){
+  .hero-content{padding:60px 0 105px}
+  .hero h1,.section-head h2{font-size:18vw;line-height:.84}
+  .section-kicker{margin-bottom:38px}
+}
