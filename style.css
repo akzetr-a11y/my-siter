@@ -160,3 +160,15 @@ footer{background:#050505;color:#777;border-top:1px solid #222}.footer-inner{dis
  .track-list small{grid-column:2;text-align:left}
  .label-scope{grid-template-columns:1fr 1fr}
 }
+
+/* V7: functional archive controls */
+.media-arrow:focus-visible,
+.media-dot:focus-visible {
+  outline: 2px solid var(--red);
+  outline-offset: 3px;
+}
+.media-arrow {
+  min-width: 46px;
+  min-height: 44px;
+}
+.media-dot[aria-current="true"] { background: var(--red); }

@@ -97,16 +97,16 @@
         <div class="media-carousel" aria-label="ASTORUN archive">
           <div class="media-stage">
             <article class="media-slide active">
+              <img src="archive-03.jpg" alt="ASTORUN youth event">
+              <div class="media-caption"><span>01 / 04</span><b>YOUTH / EVENT</b></div>
+            </article>
+            <article class="media-slide">
               <img src="archive-01.jpg" alt="ASTORUN team at By Our Own Strength 2012">
-              <div class="media-caption"><span>01 / 04</span><b>BY OUR OWN STRENGTH / 2012</b></div>
+              <div class="media-caption"><span>02 / 04</span><b>BY OUR OWN STRENGTH / 2012</b></div>
             </article>
             <article class="media-slide">
               <img src="archive-02.jpg" alt="ASTORUN sports community">
-              <div class="media-caption"><span>02 / 04</span><b>SPORT / COMMUNITY</b></div>
-            </article>
-            <article class="media-slide">
-              <img src="archive-03.jpg" alt="ASTORUN youth event">
-              <div class="media-caption"><span>03 / 04</span><b>YOUTH / EVENT</b></div>
+              <div class="media-caption"><span>03 / 04</span><b>SPORT / COMMUNITY</b></div>
             </article>
             <article class="media-slide media-video">
               <iframe src="https://www.youtube.com/embed/rBgD0KBpvC0" title="ASTORUN event archive" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
@@ -265,43 +265,57 @@
 </footer>
 
 <script>
-  const toggle = document.querySelector('.menu-toggle');
-  const menu = document.querySelector('.menu');
-  toggle.addEventListener('click', () => {
-    const open = toggle.getAttribute('aria-expanded') === 'true';
-    toggle.setAttribute('aria-expanded', String(!open));
-    menu.classList.toggle('open', !open);
-  });
-  document.querySelectorAll('.menu a').forEach(a => a.addEventListener('click', () => {
-    toggle.setAttribute('aria-expanded', 'false');
-    menu.classList.remove('open');
-  }));
-</script>
+  (() => {
+    const toggle = document.querySelector('.menu-toggle');
+    const menu = document.querySelector('.menu');
 
-<script>
-  const slides = [...document.querySelectorAll('.media-slide')];
-  const dots = [...document.querySelectorAll('.media-dot')];
-  let currentSlide = 0;
-  function showSlide(index) {
-    currentSlide = (index + slides.length) % slides.length;
-    slides.forEach((slide, i) => slide.classList.toggle('active', i === currentSlide));
-    dots.forEach((dot, i) => dot.classList.toggle('active', i === currentSlide));
-  }
-  document.querySelector('.media-arrow.prev').addEventListener('click', () => showSlide(currentSlide - 1));
-  document.querySelector('.media-arrow.next').addEventListener('click', () => showSlide(currentSlide + 1));
-  dots.forEach((dot, i) => dot.addEventListener('click', () => showSlide(i)));
+    if (toggle && menu) {
+      toggle.addEventListener('click', () => {
+        const open = toggle.getAttribute('aria-expanded') === 'true';
+        toggle.setAttribute('aria-expanded', String(!open));
+        menu.classList.toggle('open', !open);
+      });
 
-  const toggle = document.querySelector('.menu-toggle');
-  const menu = document.querySelector('.menu');
-  toggle.addEventListener('click', () => {
-    const open = toggle.getAttribute('aria-expanded') === 'true';
-    toggle.setAttribute('aria-expanded', String(!open));
-    menu.classList.toggle('open', !open);
-  });
-  document.querySelectorAll('.menu a').forEach(a => a.addEventListener('click', () => {
-    toggle.setAttribute('aria-expanded', 'false');
-    menu.classList.remove('open');
-  }));
+      menu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          toggle.setAttribute('aria-expanded', 'false');
+          menu.classList.remove('open');
+        });
+      });
+    }
+
+    const slides = Array.from(document.querySelectorAll('.media-slide'));
+    const dots = Array.from(document.querySelectorAll('.media-dot'));
+    const prev = document.querySelector('.media-arrow.prev');
+    const next = document.querySelector('.media-arrow.next');
+    let currentSlide = 0;
+
+    if (!slides.length || !prev || !next) return;
+
+    function showSlide(index) {
+      currentSlide = (index + slides.length) % slides.length;
+      slides.forEach((slide, i) => {
+        slide.classList.toggle('active', i === currentSlide);
+      });
+      dots.forEach((dot, i) => {
+        dot.classList.toggle('active', i === currentSlide);
+        dot.setAttribute('aria-current', i === currentSlide ? 'true' : 'false');
+      });
+    }
+
+    prev.addEventListener('click', () => showSlide(currentSlide - 1));
+    next.addEventListener('click', () => showSlide(currentSlide + 1));
+    dots.forEach((dot, i) => {
+      dot.addEventListener('click', () => showSlide(i));
+    });
+
+    document.addEventListener('keydown', event => {
+      if (event.key === 'ArrowLeft') showSlide(currentSlide - 1);
+      if (event.key === 'ArrowRight') showSlide(currentSlide + 1);
+    });
+
+    showSlide(0);
+  })();
 </script>
 
 </body>
