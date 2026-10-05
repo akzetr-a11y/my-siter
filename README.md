@@ -1,12 +1,11 @@
-# ASTORUN / ASTO.RUN
+# ASTORUN site
 
-Static landing page for GitHub Pages.
+Static responsive website for ASTORUN.
 
-## Files
-- `index.html` — site
-- `style.css` — design
-- `assets/logo.png` — ASTORUN logo
-- `CNAME` — custom domain `asto.run`
+Files:
+- index.html
+- style.css
+- logo.png
+- CNAME
 
-## GitHub Pages
-Upload/push the contents of this folder to a GitHub repository, enable GitHub Pages from the `main` branch, and set the custom domain to `asto.run`.
+GitHub Pages domain: asto.run

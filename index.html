@@ -1,38 +1,146 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#1d1d1d">
-<meta name="description" content="ASTORUN — events, artists, experiences and original projects.">
-<title>ASTORUN — Events · Artists · Experiences</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#111111">
+  <meta name="description" content="ASTORUN — events, artists, experiences and original projects.">
+  <title>ASTORUN — Events · Artists · Experiences</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
-<body id="top">
-<header>
-  <div class="wrap nav">
-    <a class="brand" href="#top"><img src="logo.png" alt="ASTORUN logo"><span>ASTO</span><span>.RUN</span></a>
-    <nav><a href="#events">EVENTS</a><a href="#label">LABEL</a><a href="#about">ABOUT</a><a href="#contact">CONTACT</a></nav>
+<body>
+<header class="site-header">
+  <div class="container nav">
+    <a class="brand" href="#top" aria-label="ASTORUN home">
+      <img src="logo.png" alt="ASTORUN logo">
+      <span>ASTO<span class="red">.RUN</span></span>
+    </a>
+    <button class="menu-toggle" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="menu" aria-label="Main navigation">
+      <a href="#events">EVENTS</a>
+      <a href="#label">LABEL</a>
+      <a href="#about">ABOUT</a>
+      <a href="#contact">CONTACT</a>
+    </nav>
   </div>
 </header>
-<main>
-<section class="hero"><div class="wrap hero-inner">
-  <div class="eyebrow">ASTO.RUN / ORIGINAL PROJECTS</div>
-  <h1>MAKE IT<br><span>HAPPEN.</span></h1>
-  <p class="hero-copy">Events. Artists. Experiences. Built for people who want more.</p>
-  <a class="button" href="#events">DISCOVER ASTORUN →</a>
-</div><div class="mega">ASTO RUN</div></section>
-<div class="ticker"><div class="ticker-track"><span>ASTORUN</span><span>✦</span><span>EVENTS</span><span>✦</span><span>ARTISTS</span><span>✦</span><span>EXPERIENCES</span><span>✦</span><span>ORIGINALS</span><span>✦</span><span>ASTORUN</span><span>✦</span><span>EVENTS</span><span>✦</span><span>ARTISTS</span><span>✦</span><span>EXPERIENCES</span><span>✦</span><span>ORIGINALS</span><span>✦</span></div></div>
-<section class="events" id="events"><div class="wrap"><div class="section-head"><div><div class="section-number">01 / EVENTS</div><h2>WHAT'S<br>COMING.</h2></div><p class="muted">From intimate sessions to full-scale nights. ASTORUN develops concepts where music, people and visual identity come together.</p></div>
-<div class="events-grid"><article class="event-card dark"><small>ASTORUN ORIGINAL</small><p>Private formats. Selected guests. One night, one atmosphere.</p><h3>PRIVATE<br>SESSION</h3></article><article class="event-card red"><small>01 / NIGHT</small><h3>ASTORUN<br>NIGHT</h3></article><article class="event-card"><small>02 / SOON</small><h3>MORE<br>TO COME.</h3></article></div></div></section>
-<section class="label" id="label"><div class="wrap"><div class="label-layout"><div><div class="section-number">02 / LABEL</div><div class="label-big">NOT JUST<br>A <span>PARTY.</span></div></div><div><p class="muted">ASTORUN is built to grow beyond events. We work with artists, ideas and projects that fit the energy of the brand.</p><p class="muted">Representation, original releases, collaborations and new formats are part of the road ahead.</p></div></div>
-<div class="principles"><div class="principle"><strong>01</strong><p>Strong identity over generic noise.</p></div><div class="principle"><strong>02</strong><p>People first. Experience always.</p></div><div class="principle"><strong>03</strong><p>Artists with something to say.</p></div><div class="principle"><strong>04</strong><p>Built for what comes next.</p></div></div></div></section>
-<section class="about" id="about"><div class="wrap"><div class="about-grid"><div><div class="section-number">03 / ABOUT</div><h2>ONE NAME.<br>MORE TO COME.</h2></div><div><p class="muted">ASTORUN is an independent creative company focused on events, performances, artists and exclusive experiences.</p><p class="muted">Today it starts with nights and people. Tomorrow it can become much more — from label projects to digital products and apps.</p></div></div></div></section>
-<section class="contact" id="contact"><div class="wrap"><div class="section-number">04 / CONTACT</div><h2>LET'S MAKE<br>IT HAPPEN.</h2><a class="contact-link" href="mailto:hello@asto.run">hello@asto.run</a></div></section>
+
+<main id="top">
+  <section class="hero">
+    <div class="hero-grid"></div>
+    <div class="container hero-content">
+      <p class="eyebrow">ASTO.RUN / ORIGINAL PROJECTS</p>
+      <h1>MAKE IT<br><span>HAPPEN.</span></h1>
+      <p class="lead">Events. Artists. Experiences. Built for people who want more.</p>
+      <a class="btn" href="#events">DISCOVER ASTORUN <span>↗</span></a>
+    </div>
+    <div class="hero-word" aria-hidden="true">ASTORUN</div>
+    <div class="red-shape" aria-hidden="true"></div>
+  </section>
+
+  <div class="ticker" aria-hidden="true">
+    <div class="ticker-track">
+      <span>ASTORUN</span><b>✦</b><span>EVENTS</span><b>✦</b><span>ARTISTS</span><b>✦</b><span>EXPERIENCES</span><b>✦</b><span>ORIGINALS</span><b>✦</b>
+      <span>ASTORUN</span><b>✦</b><span>EVENTS</span><b>✦</b><span>ARTISTS</span><b>✦</b><span>EXPERIENCES</span><b>✦</b><span>ORIGINALS</span><b>✦</b>
+    </div>
+  </div>
+
+  <section class="section light" id="events">
+    <div class="container">
+      <div class="section-top">
+        <div>
+          <p class="kicker">01 / EVENTS</p>
+          <h2>WHAT'S<br><em>COMING.</em></h2>
+        </div>
+        <p class="section-copy">From intimate sessions to full-scale nights. ASTORUN develops concepts where music, people and visual identity come together.</p>
+      </div>
+      <div class="cards">
+        <article class="card card-black">
+          <div><small>ASTORUN ORIGINAL</small><p>Private formats. Selected guests. One night, one atmosphere.</p></div>
+          <h3>PRIVATE<br>SESSION</h3>
+        </article>
+        <article class="card card-red">
+          <small>01 / NIGHT</small>
+          <h3>ASTORUN<br>NIGHT</h3>
+        </article>
+        <article class="card card-gray">
+          <small>02 / SOON</small>
+          <h3>MORE<br>TO COME.</h3>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section dark" id="label">
+    <div class="container">
+      <div class="split">
+        <div>
+          <p class="kicker">02 / LABEL</p>
+          <h2>NOT JUST<br>A <em>PARTY.</em></h2>
+        </div>
+        <div class="copy-stack">
+          <p>ASTORUN is built to grow beyond events. We work with artists, ideas and projects that fit the energy of the brand.</p>
+          <p>Representation, original releases, collaborations and new formats are part of the road ahead.</p>
+        </div>
+      </div>
+      <div class="principles">
+        <div><strong>01</strong><p>Strong identity over generic noise.</p></div>
+        <div><strong>02</strong><p>People first. Experience always.</p></div>
+        <div><strong>03</strong><p>Artists with something to say.</p></div>
+        <div><strong>04</strong><p>Built for what's next.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section darker" id="about">
+    <div class="container split about">
+      <div>
+        <p class="kicker">03 / ABOUT</p>
+        <h2>ONE NAME.<br>MORE TO <em>COME.</em></h2>
+      </div>
+      <div class="copy-stack">
+        <p>ASTORUN is an independent creative company focused on events, performances, artists and exclusive experiences.</p>
+        <p>Today it starts with nights and people. Tomorrow it can become much more — from label projects to digital products and apps.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="container">
+      <p class="kicker white">04 / CONTACT</p>
+      <h2>LET'S MAKE<br>IT <span>HAPPEN.</span></h2>
+      <a class="email" href="mailto:hello@asto.run">hello@asto.run <span>↗</span></a>
+    </div>
+  </section>
 </main>
-<footer><div class="wrap footer-inner"><a class="brand" href="#top"><img src="logo.png" alt=""><span>ASTO</span><span>.RUN</span></a><div class="footer-right">© 2026 ASTORUN. ALL RIGHTS RESERVED.</div></div></footer>
+
+<footer>
+  <div class="container footer">
+    <a class="brand" href="#top"><img src="logo.png" alt=""><span>ASTO<span class="red">.RUN</span></span></a>
+    <div>© 2026 ASTORUN</div>
+    <div>EVENTS · ARTISTS · EXPERIENCES</div>
+  </div>
+</footer>
+
+<script>
+  const toggle = document.querySelector('.menu-toggle');
+  const menu = document.querySelector('.menu');
+  toggle.addEventListener('click', () => {
+    const open = toggle.getAttribute('aria-expanded') === 'true';
+    toggle.setAttribute('aria-expanded', String(!open));
+    menu.classList.toggle('open', !open);
+    document.body.classList.toggle('no-scroll', !open);
+  });
+  document.querySelectorAll('.menu a').forEach(a => a.addEventListener('click', () => {
+    toggle.setAttribute('aria-expanded','false');
+    menu.classList.remove('open');
+    document.body.classList.remove('no-scroll');
+  }));
+</script>
 </body>
 </html>
