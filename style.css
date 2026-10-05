@@ -269,3 +269,58 @@ footer{background:#050505;color:#777;border-top:1px solid #222}.footer-inner{dis
   .project-gallery-head h3{font-size:18vw}
   .project-mini-gallery{grid-template-columns:1fr 1fr;gap:7px}
 }
+
+
+/* V10: IDEA BASE — scalable idea cards */
+.idea-hero{display:grid;grid-template-columns:1.1fr .9fr;gap:70px;align-items:end;padding:10px 0 65px}
+.idea-hero h2{font:900 clamp(72px,9vw,145px)/.78 "Barlow Condensed";letter-spacing:-.045em;margin:0}
+.idea-hero h2 span{color:var(--red)}
+.idea-lead{max-width:520px;color:#aaa;font-size:15px;line-height:1.75}
+.idea-lead p{margin:0 0 18px}
+.idea-lead strong{color:#fff}
+.idea-flow{border-top:1px solid #333;border-bottom:1px solid #333;padding:25px 0;display:flex;align-items:center;justify-content:space-between;gap:20px;margin-bottom:70px}
+.idea-flow span{font:900 28px/1 "Barlow Condensed";letter-spacing:.03em;color:#fff}
+.idea-flow b{color:var(--red);font-size:24px}
+.idea-note{display:grid;grid-template-columns:170px 1fr 1fr;gap:40px;padding:34px 0;border-top:2px solid var(--red);border-bottom:1px solid #333;margin-bottom:90px;align-items:start}
+.idea-note>span{font-size:10px;font-weight:900;letter-spacing:.16em;color:var(--red)}
+.idea-note strong{font:900 38px/.9 "Barlow Condensed";letter-spacing:-.02em}
+.idea-note p{font-size:13px;line-height:1.7;color:#aaa;margin:0}
+.idea-feature{display:grid;grid-template-columns:1.1fr .9fr;gap:55px;background:#0d0d0d;border:1px solid #292929;padding:12px;margin-bottom:90px}
+.idea-feature-media{min-width:0;display:flex;align-items:stretch}
+.idea-feature-media img{display:block;width:100%;height:100%;min-height:460px;object-fit:cover}
+.idea-feature-copy{padding:28px 25px 30px 0}
+.idea-feature-number{font-size:9px;font-weight:900;letter-spacing:.16em;color:var(--red);margin-bottom:20px}
+.idea-feature h3{font:900 65px/.8 "Barlow Condensed";letter-spacing:-.035em;margin:0 0 20px}
+.idea-feature h3 span{color:var(--red)}
+.idea-feature-intro{font-size:15px;line-height:1.6;color:#ddd;margin:0 0 30px;max-width:440px}
+.idea-rules{border-top:1px solid #333}
+.idea-rules>div{display:grid;grid-template-columns:38px 1fr;gap:12px;padding:15px 0;border-bottom:1px solid #333}
+.idea-rules span{font:900 20px/1 "Barlow Condensed";color:var(--red)}
+.idea-rules p{font-size:12px;line-height:1.55;color:#aaa;margin:0}
+.idea-rules b{color:#fff}
+.idea-uses{margin-top:25px;padding-top:18px;border-top:1px solid #333}
+.idea-uses span{font-size:9px;font-weight:900;letter-spacing:.15em;color:var(--red)}
+.idea-uses p{font-size:9px;line-height:1.5;letter-spacing:.08em;color:#aaa;margin:8px 0 0}
+.idea-add{display:grid;grid-template-columns:170px 1fr 1fr;gap:40px;padding:35px 0 15px;border-top:1px solid #333}
+.idea-add>span{font-size:9px;font-weight:900;letter-spacing:.14em;color:#777}
+.idea-add strong{font:900 34px/.9 "Barlow Condensed";letter-spacing:-.02em}
+.idea-add p{font-size:12px;line-height:1.65;color:#777;margin:0}
+@media(max-width:900px){
+  .idea-hero{grid-template-columns:1fr;gap:35px}
+  .idea-flow{flex-wrap:wrap;justify-content:flex-start}
+  .idea-note,.idea-add{grid-template-columns:1fr;gap:18px}
+  .idea-feature{grid-template-columns:1fr;gap:0;padding:8px}
+  .idea-feature-media img{min-height:0;aspect-ratio:16/9}
+  .idea-feature-copy{padding:28px 18px 25px}
+}
+@media(max-width:700px){
+  .idea-hero h2{font-size:22vw}
+  .idea-flow{gap:12px}
+  .idea-flow span{font-size:22px}
+  .idea-flow b{font-size:18px}
+  .idea-note{margin-bottom:65px}
+  .idea-note strong{font-size:32px}
+  .idea-feature{margin-bottom:65px}
+  .idea-feature h3{font-size:54px}
+  .idea-add strong{font-size:30px}
+}
